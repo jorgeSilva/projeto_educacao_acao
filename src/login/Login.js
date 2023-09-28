@@ -27,11 +27,21 @@ const Login = () => {
       Login
 
       <form>
-        <input onChange={handleChangeEmail} type='email' value={email} placeholder='Email'/>
-        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
+        {
+          loading ?
+          <>
+            <input onChange={handleChangeEmail} type='email' value={email} placeholder='Email'/>
+            <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
+            <button onClick={handleLogin}>Carregando</button>  
+          </>
+          :
 
-
-        <button onClick={handleLogin}>Entrar</button>
+          <>
+            <input onChange={handleChangeEmail} type='email' value={email} placeholder='Email'/>
+            <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
+            <button onClick={handleLogin}>Entrar</button>
+          </>
+        }
 
         {
           error && <p>{error}</p>
