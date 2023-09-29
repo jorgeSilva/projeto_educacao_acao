@@ -1,0 +1,183 @@
+.home__body{
+  background-color: var(--c5);
+  height: 100vh;
+  padding: 1rem;
+}
+
+.home__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home__header__icon__systech svg{
+  width: 150px;
+}
+
+.home__header__buttons{
+  display: flex;
+  column-gap: .5rem;
+  margin-left: 19rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__header__buttons button{
+  outline: none;
+  border: none;
+}
+
+.home__header__icon__setor svg,
+.home__header__icon__serv svg,
+.home__header__icon__escola svg{
+  fill: var(--c12);
+}
+
+.home__header__icon__setor,
+.home__header__icon__serv,
+.home__header__icon__escola{
+  background-color: var(--c0);
+  padding: 1rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: .3s ease;
+  position: relative;
+}
+
+.home__header__icon__escola::after{
+  content: 'Escola';
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: none;
+}
+
+.home__header__icon__escola:hover{
+  width: 120px;
+  border-radius: 60px;
+  align-items: start;
+  justify-content: start;
+}
+
+.home__header__icon__escola:hover::after{
+  display: inline-flex;
+  border-radius: 60px;
+  left: 40%;
+  top: 0px;
+  height: 48px;
+}
+
+.home__header__icon__escola__active{
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: var(--p5);
+  color: var(--c0);
+  column-gap: .5rem;
+  border-radius: 60px;
+}
+
+.home__header__icon__escola__active svg{
+  fill: var(--c0);
+}
+
+.home__header__icon__serv::after{
+  content: 'Servidor';
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: none;
+}
+
+.home__header__icon__serv:hover{
+  width: 140px;
+  border-radius: 60px;
+  align-items: start;
+  justify-content: start;
+}
+
+
+.home__header__icon__serv:hover::after{
+  display: inline-flex;
+  border-radius: 60px;
+  left: 35%;
+  top: 0px;
+  height: 48px;
+}
+
+.home__header__icon__serv__active{
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: var(--p5);
+  color: var(--c0);
+  column-gap: .5rem;
+  border-radius: 60px;
+}
+
+.home__header__icon__serv__active svg{
+  fill: var(--c0);
+}
+
+.home__header__icon__setor::after{
+  content: 'Setor';
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: none;
+}
+
+.home__header__icon__setor:hover{
+  width: 120px;
+  border-radius: 60px;
+  align-items: start;
+  justify-content: start;
+}
+
+
+.home__header__icon__setor:hover::after{
+  display: inline-flex;
+  border-radius: 60px;
+  left: 40%;
+  top: 0px;
+  height: 48px;
+}
+
+.home__header__icon__setor__active{
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: var(--p5);
+  color: var(--c0);
+  column-gap: .5rem;
+  border-radius: 60px;
+}
+
+.home__header__icon__setor__active svg{
+  fill: var(--c0);
+}
+
+.home__header__search{
+  width: 500px;
+  height: 56px;
+  background-color: var(--c0);
+}
