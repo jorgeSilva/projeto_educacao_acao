@@ -1,0 +1,9 @@
+.error__content{
+  margin-top: 1rem;
+}
+
+.error__text{
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #e3170a;
+}

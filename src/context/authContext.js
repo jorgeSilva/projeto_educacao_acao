@@ -33,6 +33,7 @@ function AuthProvider({children}){
       setAuthorized(false)
       setError(e.response.data.error)
       setLoading(false)
+      setPassword('')
     })
   }
 

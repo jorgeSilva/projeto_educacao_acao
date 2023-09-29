@@ -1,0 +1,195 @@
+.login__body{
+  height: 100vh;
+  background: url("../assets/Login/backgroundSVGLogin.svg") left center var(--c14);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+}
+
+.login__content{
+  grid-column: 3 / 11;
+  height: 80%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  transition: .3s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.login__left__side{
+  grid-column: 1 / 4;
+  background-color: var(--c16);
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  transition: .3s ease;
+  color: var(--c1);
+}
+
+.login__svg__logo{
+  padding: 2rem 2rem;
+}
+
+.login__svg__icon{
+  width: auto;
+}
+
+.login__rigth__side{
+  grid-column: 4 / -1;
+  background: 
+    url("../assets/Login/backgroundSVG.svg")
+    no-repeat
+    center
+    top
+    var(--c1);
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  transition: .3s ease;
+  padding: 2rem;
+}
+
+.login__rigth__side__h1{
+  font-size: 3rem;
+  font-family: 'DM Serif Display', serif;
+  color: var(--c12);
+  letter-spacing: 2px;
+  line-height: 1;
+  font-weight: 400;
+  width: 25ch;
+  transition: .2s ease;
+}
+
+.login__text__aux{
+  font-size: 1.5rem;
+  color: var(--c11);
+  font-family: 'Raleway', sans-serif;
+  padding-top: 1rem;
+}
+
+.login__rigth__side__h2{
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.25rem;
+  color: var(--c12);
+  letter-spacing: 2px;
+  line-height: 1.1;
+  padding-top: 5rem;
+  font-weight: 400;
+}
+
+.login__form{
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form input{
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--c7);
+  background-color: var(--c3);
+  transition: .3s ease;
+}
+
+.login__form input:focus{
+  outline: none;
+  border: 1px solid var(--c8);
+}
+
+.login__form button{
+  width: 100%;
+  font-family: 'Raleway', sans-serif; 
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--c7);
+  background-color: var(--p3);
+  color: var(--c1);
+  transition: .3s ease;
+}
+
+.login__button__loading{
+  opacity: .6;
+}
+
+@media (max-width: 1445px) {
+  .login__rigth__side__h1{
+    width: initial;
+  }
+}
+
+@media (max-width: 1067px) {
+  .login__content{
+    grid-column: 2 / 12;
+  }
+}
+
+@media (max-width: 852px) {
+  .login__content{
+    grid-column: 1 / 13;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 743px) {
+  .login__rigth__side__h1{
+    font-size: 2.75rem;
+  }
+
+  .login__text__aux{
+    font-size: 1.25rem;
+  }
+
+  .login__rigth__side__h2{
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .login__svg__logo{
+    padding: 1rem;
+    width: 80%;
+  }
+
+  .login__rigth__side{
+    padding: 1rem;
+  }
+
+  .login__rigth__side__h1{
+    font-size: 2.5rem;
+  }
+
+  .login__text__aux{
+    font-size: 1rem;
+  }
+
+  .login__rigth__side__h2{
+    font-size: 1.75rem;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 564px) {
+  .login__svg__logo svg{
+    width: 140%;
+  }
+
+  .login__svg__icon svg{
+    width: 200%;
+  }
+}
+
+@media (max-width: 491px) {
+  .login__left__side{
+    display: none;
+  }
+
+  .login__rigth__side{
+    grid-column: 1 / -1;
+    border-radius: 40px;
+    padding: 2rem;
+  }
+}
