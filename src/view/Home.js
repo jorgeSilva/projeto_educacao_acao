@@ -14,8 +14,15 @@ import Search from '../utils/search/Search'
 const Home = () => {
   const [btnHeader, setBtnHeader] = React.useState('Setor')
   const {
-    handleLogout
+    handleLogout,
+    authorized
   } = React.useContext(Context)
+
+  React.useEffect(() => {
+    if(!authorized){
+      window.location.href = '/'
+    }
+  }, [authorized])
 
   return (
     <main className={style.home__body}>
