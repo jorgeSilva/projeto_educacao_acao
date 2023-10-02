@@ -30,7 +30,14 @@
 
 .login__svg__icon{
   width: auto;
-  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__svg__icon svg{
+  width: auto;
+  height: 100%;
 }
 
 .login__rigth__side{
