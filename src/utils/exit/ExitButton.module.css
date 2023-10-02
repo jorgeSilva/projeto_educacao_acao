@@ -28,10 +28,12 @@
   align-items: center;
   justify-content: center;
   column-gap: .5rem;
+  cursor: pointer;
 }
 
 .exit__button:hover::after{
   content: "Sair";
   font-size: 1rem;
   font-family: 'Raleway', sans-serif; 
+  cursor: pointer;
 }

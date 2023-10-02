@@ -30,6 +30,8 @@
 .search:hover{
   border: 2px solid var(--c6);
   border-right: none;
+  cursor: pointer;
+
 }
 
 .search__content input{
@@ -59,4 +61,11 @@
   justify-content: center;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
+}
+
+.search__active svg{
+  fill: var(--c12);
+}
+.search__active:hover{
+  cursor: pointer;
 }

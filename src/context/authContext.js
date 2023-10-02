@@ -38,11 +38,12 @@ function AuthProvider({children}){
   }
 
   async function handleLogout(e){
-    setAuthorized(false)
-    localStorage.removeItem('token')
-    api.defaults.headers.Authorization = undefined
-    alert('Você saiu da conta')
-    window.location.href = `/`
+    if(window.confirm('Você deseja deixar esta conta? ') === true){
+      setAuthorized(false)
+      localStorage.removeItem('token')
+      api.defaults.headers.Authorization = undefined
+      window.location.href = `/`
+    }
   }
 
   return(
