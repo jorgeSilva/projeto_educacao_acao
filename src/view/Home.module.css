@@ -179,5 +179,32 @@
 .home__header__search{
   width: 500px;
   height: 56px;
-  background-color: var(--c0);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1225px) {
+  .home__header__buttons{
+    margin-left: 10rem;
+  }
+}
+
+@media (max-width: 795px) {
+  .home__header__buttons{
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 685px) {
+  .home__header__buttons{
+    margin-left: .5rem;
+  }
+}
+
+@media (max-width: 642px) {
+  .home__header__buttons{
+    margin-left: .5rem;
+  }
 }

@@ -7,9 +7,15 @@ import { ReactComponent as IconEscola} from '../assets/Home/iconEscola.svg'
 import Setor from './setor/Setor'
 import Servidores from './servidores/Servidores'
 import Escola from './escola/Escola'
+import ExitButton from '../utils/exit/ExitButton'
+import { Context } from '../context/authContext'
+import Search from '../utils/search/Search'
 
 const Home = () => {
   const [btnHeader, setBtnHeader] = React.useState('Setor')
+  const {
+    handleLogout
+  } = React.useContext(Context)
 
   return (
     <main className={style.home__body}>
@@ -85,9 +91,10 @@ const Home = () => {
             </>)
           }
         </section>
-
+          
         <section className={style.home__header__search}>
-
+          <Search/>
+          <ExitButton content={handleLogout}/>
         </section>
       </header>
 
@@ -97,7 +104,6 @@ const Home = () => {
         (btnHeader === 'Servidores' && <Servidores/>)
         ||
         (btnHeader === 'Escola' && <Escola/>)
-
       }
     </main>
   )

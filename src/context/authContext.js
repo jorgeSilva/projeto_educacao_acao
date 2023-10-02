@@ -37,8 +37,16 @@ function AuthProvider({children}){
     })
   }
 
+  async function handleLogout(e){
+    setAuthorized(false)
+    localStorage.removeItem('token')
+    api.defaults.headers.Authorization = undefined
+    alert('Você saiu da conta')
+    window.location.href = `/`
+  }
+
   return(
-    <Context.Provider value={{handleChangeEmail, handleChangePassword, handleLogin, email, password, loading, error, authorized}}>
+    <Context.Provider value={{handleChangeEmail, handleChangePassword, handleLogin, handleLogout, email, password, loading, error, authorized}}>
       {children}
     </Context.Provider>
   )

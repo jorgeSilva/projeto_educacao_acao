@@ -1,0 +1,37 @@
+.exit__button__content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exit__button{
+  width: 48px;
+  height: 48px;
+  background-color: var(--c0);
+  border-radius: 50%;
+  outline: none;
+  border: 2px solid var(--c0);
+  transition: .3s ease;
+}
+
+.exit__button svg{
+  fill: var(--c12);
+  width: 18px;
+  height: 18px;
+}
+
+.exit__button:hover{
+  border: 2px solid var(--c6);
+  width: 100px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+}
+
+.exit__button:hover::after{
+  content: "Sair";
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif; 
+}
