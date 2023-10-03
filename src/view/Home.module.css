@@ -10,6 +10,12 @@
   justify-content: space-between;
 }
 
+.home__header__icon__systech{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .home__header__icon__systech svg{
   width: 150px;
 }
@@ -194,20 +200,121 @@
   }
 }
 
-@media (max-width: 795px) {
+@media (max-width: 814px) {
   .home__header__buttons{
-    margin-left: 4rem;
+    margin-left: 6rem;
   }
 }
 
-@media (max-width: 685px) {
+@media (max-width: 764px) {
+  .home__header__buttons{
+    margin-left: 5rem;
+  }
+}
+
+@media (max-width: 740px) {
   .home__header__buttons{
     margin-left: .5rem;
   }
 }
 
-@media (max-width: 642px) {
+@media (max-width: 667px) {
   .home__header__buttons{
     margin-left: .5rem;
   }
+}
+
+.home__content__modal{
+  background-color: rgba(73, 73, 73, 0.822);
+  backdrop-filter: blur(1px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.home__header__buttons__active{
+  display: flex;
+  height: 100%;
+  column-gap: .5rem;
+  margin-left: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.home__header__buttons__active button{
+  outline: none;
+  border: none;
+}
+
+.modal__button__open{
+  width: 96px;
+  margin-left: 1rem;
+  height: 48px;
+  border-radius: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c0);
+  cursor: pointer;
+}
+
+.modal__button__open svg{
+  fill: var(--c12);
+  width: 24px;
+  height: 18px;
+}
+
+@media (max-width: 470px) {
+  .modal__button__open{
+    width: 120px;
+  }
+}
+
+@media (max-width: 420px) {
+  .modal__button__open{
+    width: 140px;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal__button__open{
+    width: 160px;
+  }
+}
+
+@media (max-width: 370px) {
+  .modal__button__open{
+    width: 190px;
+  }
+
+  .home__header__icon__systech svg{
+    width: 120px;
+  }
+}
+
+.modal__button__open__active{
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  border: none;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--c0);
+  cursor: pointer;
+}
+
+.modal__button__open__active svg{
+  fill: var(--c12);
+  width: 24px;
+  height: 24px;
 }
