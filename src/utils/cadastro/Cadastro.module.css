@@ -1,0 +1,80 @@
+.cadastro__container{
+  padding-top: 2rem;
+}
+
+.cadastro__title{
+  font-family: 'Raleway', sans-serif; 
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--c12);
+}
+
+.cadastro__content{
+  margin: 1rem 1rem .5rem 1rem;
+  padding: 0;
+  display: block;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cadastro__content svg{
+  fill: var(--c12);
+}
+
+.cadastro__content div:nth-child(1n){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  transition: .3s ease;
+  text-align: start;
+}
+
+.cadastro__content div:nth-child(1n):hover ,
+.cadastro__content div:nth-child(1n):hover svg {
+  column-gap: 1rem;
+  color: var(--p3);
+  fill: var(--p3);
+}
+
+.cadastro__home{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 432px) {
+  .cadastro__content{
+    background-color: var(--c0);
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    border: 2px solid var(--c8);
+    transition: .3s ease;
+    width: 100%;
+  }
+
+  .cadastro__content div p{
+    width: 20ch;
+  }
+
+  .cadastro__content:hover,
+  .cadastro__content:focus{
+    border: 2px solid var(--p3);
+  }
+}
+
+@media (max-width: 364px) {
+  .cadastro__content{
+    margin: 1rem 0rem .5rem 0rem;
+  }
+}
+
+@media (max-width: 333px) {
+  .cadastro__content{
+    padding: 1rem;
+  }
+}

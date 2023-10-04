@@ -276,6 +276,10 @@
 }
 
 @media (max-width: 420px) {
+  .home__body{
+    min-height: 100%;
+  }
+
   .modal__button__open{
     width: 140px;
   }

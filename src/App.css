@@ -1,3 +1,9 @@
+/* 
+  font-family: 'DM Serif Display', serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Raleway', sans-serif; 
+*/
+
 *{
   padding: 0;
   margin: 0;
@@ -73,8 +79,18 @@
   }
 } 
 
-/* 
-  font-family: 'DM Serif Display', serif;
-  font-family: 'Inter', sans-serif;
-  font-family: 'Raleway', sans-serif; 
-*/
+.container{
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+}
+
+@media (max-width: 1230px) {
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .rigth__side__container{
+    margin-top: 3rem;
+  }
+}
