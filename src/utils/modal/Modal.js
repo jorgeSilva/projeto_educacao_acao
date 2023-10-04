@@ -2,7 +2,7 @@ import React from 'react'
 import style from './Modal.module.css'
 import { ReactComponent as IconExit } from '../../assets/Home/x-circle-fill.svg'
 import { ReactComponent as SvgLogo } from '../../assets/Login/SysTechLogo.svg'
-import { ReactComponent as SvgIcon } from '../../assets/Login/effectSVG.svg'
+import { ReactComponent as SvgIcon } from '../../assets/Home/undraw_file_bundle_re_6q1e (1).svg'
 
 
 const Modal = ({content}) => {

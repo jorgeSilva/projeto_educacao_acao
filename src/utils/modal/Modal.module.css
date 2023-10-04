@@ -74,6 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 1rem;
 }
 
 .login__svg__icon svg{
