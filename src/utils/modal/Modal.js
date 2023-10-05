@@ -146,8 +146,6 @@ const Modal = ({content}) => {
                           value={input2} 
                           placeholder='Obs'/>
 
-                        <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
-
                         <button onClick={handleSubmit}>Cadastrar</button>
                       </>
                     }
@@ -161,7 +159,9 @@ const Modal = ({content}) => {
             </main>
           </section>
         )
+
         ||
+
         (
           content.type && content.type === 'convenio'
           &&
@@ -226,8 +226,6 @@ const Modal = ({content}) => {
                           value={input1} 
                           placeholder='Merenda'/>
 
-                        <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
-
                         <button onClick={handleSubmit}>Cadastrar</button>
                       </>
                     }
@@ -241,7 +239,9 @@ const Modal = ({content}) => {
             </main>
           </section>
         )
+
         ||
+
         (
           content.type && content.type === 'servidor'
           &&
@@ -298,8 +298,6 @@ const Modal = ({content}) => {
                           }
                         </select>
 
-                        <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
-
                         <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
@@ -334,8 +332,6 @@ const Modal = ({content}) => {
                           }
                         </select>
 
-                        <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
-
                         <button onClick={handleSubmit}>
                           Cadastrar
                         </button>
@@ -351,7 +347,9 @@ const Modal = ({content}) => {
             </main>
           </section>
         )
+
         ||
+
         (
           content.type && content.type === 'professor'
           &&
@@ -402,8 +400,6 @@ const Modal = ({content}) => {
                           }
                         </select>
 
-                        <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
-
                         <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
@@ -432,8 +428,6 @@ const Modal = ({content}) => {
                           }
                         </select>
 
-                        <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
-
                         <button onClick={handleSubmit}>
                           Cadastrar
                         </button>
@@ -449,7 +443,9 @@ const Modal = ({content}) => {
             </main>
           </section>
         )
+
         ||
+        
         (
           content.type && content.type === 'aluno'
           &&
