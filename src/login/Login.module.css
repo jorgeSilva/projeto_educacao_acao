@@ -116,6 +116,7 @@
   background-color: var(--p3);
   color: var(--c1);
   transition: .3s ease;
+  cursor: pointer;
 }
 
 .login__button__loading{

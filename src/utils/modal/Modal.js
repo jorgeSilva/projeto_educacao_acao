@@ -20,11 +20,12 @@ const Modal = ({content}) => {
     handleInput7,
     handleInput8, 
     handleInput9, 
+    handleSelectSchool,
     input0, 
     input1, 
     input2, 
     input3, 
-    input4,
+    input4, 
     input5, 
     input6, 
     input7, 
@@ -45,26 +46,15 @@ const Modal = ({content}) => {
     setInput6,
     setInput7,
     setInput8,
-    setInput9
+    setInput9,
+    setSelected,
+    selected,
+    schools
   } = React.useContext(cadContext)
-
-  console.log(input0, input1, input2, input3);
-  const [schools, setSchools] = React.useState('')
-  const [schoolsSelected, setSchoolsSelected] = React.useState('')
-
-  async function schoolsGet(){
-    await api.get('/escola/show').then(({data}) => setSchools(data)).catch(e => console.log(e))
-  }
-
-  const handleSelectSchool = async (e) =>{
-    const s = schools.find((x) => x._id === e.target.value)
-    setInput3(s._id);
- }
-
- console.log(input3);
+  
 
   React.useEffect(() => {
-    schoolsGet()
+    setType(content.type)
   }, [])
 
   return (  
@@ -73,22 +63,13 @@ const Modal = ({content}) => {
       <section className={style.modal__content__button}>
         <button onClick={() => {
           content.setModal('')
-          setInput0('')
-          setInput1('')
-          setInput2('')
-          setInput3('')
-          setInput4('')
-          setInput5('')
-          setInput6('')
-          setInput7('')
-          setInput8('')
-          setInput9('')
           setSuccess('')
           window.location.reload()
         }} className={style.modal__button__close}>
           <IconExit/>
         </button>
       </section>
+
       {
         (
           content.type && content.type === 'setor'
@@ -140,10 +121,9 @@ const Modal = ({content}) => {
                         <button 
                           className={style.login__button__loading} onClick={(e) => {
                             e.preventDefault()
-                            setType(content.type)
                             handleSubmit()
                           }}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -168,11 +148,7 @@ const Modal = ({content}) => {
 
                         <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
 
-                        <button onClick={(e) =>{
-                          e.preventDefault()
-                          setType(content.type)
-                          handleSubmit()
-                        }}>Cadastrar</button>
+                        <button onClick={handleSubmit}>Cadastrar</button>
                       </>
                     }
 
@@ -230,10 +206,9 @@ const Modal = ({content}) => {
                         <button 
                           className={style.login__button__loading} onClick={(e) => {
                             e.preventDefault()
-                            setType(content.type)
                             handleSubmit()
                           }}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -253,11 +228,7 @@ const Modal = ({content}) => {
 
                         <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
 
-                        <button onClick={(e) =>{
-                          e.preventDefault()
-                          setType(content.type)
-                          handleSubmit()
-                        }}>Cadastrar</button>
+                        <button onClick={handleSubmit}>Cadastrar</button>
                       </>
                     }
 
@@ -317,13 +288,10 @@ const Modal = ({content}) => {
                           value={input2} 
                           placeholder='Cargo'/>
                         
-                        <select 
-                          onChange={handleSelectSchool}
-                          value={input3} 
-                          placeholder='Escola'>
+                        <select onChange={handleSelectSchool}>
                           {
                             schools && schools.map(item => (
-                              <option key={item._id} value={item._id}>
+                              <option key={item._id} value={selected}>
                                 {item.nome}
                               </option>
                             ))
@@ -332,13 +300,8 @@ const Modal = ({content}) => {
 
                         <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
 
-                        <button 
-                          className={style.login__button__loading} onClick={(e) => {
-                            e.preventDefault()
-                            setType(content.type)
-                            handleSubmit()
-                          }}>
-                          <span class="loader"></span>
+                        <button className={style.login__button__loading} >
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -373,16 +336,14 @@ const Modal = ({content}) => {
 
                         <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
 
-                        <button onClick={(e) =>{
-                          e.preventDefault()
-                          setType(content.type)
-                          handleSubmit()
-                        }}>Cadastrar</button>
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
                     {
-                      !success && error && <Error content={error}/>
+                      error && <Error content={error}/>
                     }
                   </form>
                 </div>
@@ -431,21 +392,20 @@ const Modal = ({content}) => {
                           value={input1} 
                           placeholder='Cargo'/>
                         
-                        <input 
-                          onChange={handleInput2}
-                          type='text' 
-                          value={input2} 
-                          placeholder='Escola'/>
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
 
                         <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
 
-                        <button 
-                          className={style.login__button__loading} onClick={(e) => {
-                            e.preventDefault()
-                            setType(content.type)
-                            handleSubmit()
-                          }}>
-                          <span class="loader"></span>
+                        <button className={style.login__button__loading} >
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -462,19 +422,21 @@ const Modal = ({content}) => {
                           value={input1} 
                           placeholder='Cargo'/>
                         
-                        <input 
-                          onChange={handleInput2}
-                          type='text' 
-                          value={input2} 
-                          placeholder='Escola'/>
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
 
                         <p style={{fontFamily:'Inter', padding: '1rem'}}>Aperte duas vezes no botão 'Cadastrar' para realizar o cadastro</p>
 
-                        <button onClick={(e) =>{
-                          e.preventDefault()
-                          setType(content.type)
-                          handleSubmit()
-                        }}>Cadastrar</button>
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
@@ -519,7 +481,7 @@ const Modal = ({content}) => {
                         <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
                         <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
                         <button className={style.login__button__loading} onClick={handleLogin}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -571,7 +533,7 @@ const Modal = ({content}) => {
                         <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
                         <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
                         <button className={style.login__button__loading} onClick={handleLogin}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -623,7 +585,7 @@ const Modal = ({content}) => {
                         <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
                         <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
                         <button className={style.login__button__loading} onClick={handleLogin}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -675,7 +637,7 @@ const Modal = ({content}) => {
                         <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
                         <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
                         <button className={style.login__button__loading} onClick={handleLogin}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :
@@ -727,7 +689,7 @@ const Modal = ({content}) => {
                         <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
                         <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
                         <button className={style.login__button__loading} onClick={handleLogin}>
-                          <span class="loader"></span>
+                          <span className="loader"></span>
                         </button>  
                       </>
                       :

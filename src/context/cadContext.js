@@ -18,6 +18,7 @@ function CadProvider({children}){
   const [success, setSuccess] = React.useState('')
   const [loading, setLoading] = React.useState('')
   const [type, setType] = React.useState('')
+  const [selected, setSelected] = React.useState('')
 
   const handleInput0 = (e) =>{
     setInput0(e.target.value)
@@ -59,7 +60,22 @@ function CadProvider({children}){
     setInput9(e.target.value)
   }
 
-  async function handleSubmit(){
+  const [schools, setSchools] = React.useState('')
+
+  async function schoolsGet(){
+    await api.get('escola/show').then(({data}) => setSchools(data)).catch(e => console.log(e))
+  }
+
+  const handleSelectSchool = (e) =>{
+    const s = schools.find((x) => x._id === e.target.value)
+    setSelected(String(s._id));
+  }
+
+  console.log(selected);
+
+  async function handleSubmit(e){
+    e.preventDefault()
+
     if(type === 'setor'){
       setLoading(true)
       await api.post(`${type}`, {
@@ -85,30 +101,27 @@ function CadProvider({children}){
         setError(e.response.data.error);
         setLoading(false)
       })
-    }
-    
-    if(type === 'servidor'){
+    }else if(type === 'servidor'){
       setLoading(true)
-      await api.post(`${type}`, {
+      await api.post(`/${type}`, {
         nome: input0,
         funcao: input1,
         cargo: input2,
-        escolaFk: input3
+        fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
       }).catch(e => {
         setError(e.response.data.error);
+        console.log(selected);
         setLoading(false)
       })
-    }
-
-    if(type === 'professor'){
+    }else if(type === 'professor'){
       setLoading(true)
       await api.post(`${type}`, {
         nome: input0,
         funcao: input1,
-        escolaFk: input3
+        fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -118,6 +131,10 @@ function CadProvider({children}){
       })
     }
   }
+
+  React.useEffect(() => {
+    schoolsGet()
+  }, [])
 
   return(
     <cadContext.Provider 
@@ -131,7 +148,8 @@ function CadProvider({children}){
         handleInput6, 
         handleInput7, 
         handleInput8, 
-        handleInput9, 
+        handleInput9,
+        handleSelectSchool,
         input0, 
         input1, 
         input2, 
@@ -157,7 +175,10 @@ function CadProvider({children}){
         setInput6,
         setInput7,
         setInput8,
-        setInput9
+        setInput9,
+        setSelected,
+        selected,
+        schools
       }}>
       {children}
     </cadContext.Provider>

@@ -130,7 +130,8 @@
   flex-direction: column;
 }
 
-.login__form input{
+.login__form input,
+.login__form select{
   width: 100%;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -141,7 +142,8 @@
   transition: .3s ease;
 }
 
-.login__form input:focus{
+.login__form input:focus,
+.login__form select:focus{
   outline: none;
   border: 1px solid var(--c8);
 }

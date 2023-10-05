@@ -57,7 +57,7 @@ const Login = () => {
                 <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
                 <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
                 <button className={style.login__button__loading} onClick={handleLogin}>
-                  <span class="loader"></span>
+                  <span className="loader"></span>
                 </button>  
               </>
               :
