@@ -6,7 +6,6 @@ import { ReactComponent as SvgIcon } from '../../assets/Home/undraw_file_bundle_
 import { cadContext } from '../../context/cadContext'
 import Error from '../error/Error'
 import Success from '../msgSuccess/Success'
-import api from '../../services/api'
 
 const Modal = ({content}) => {
   const {
@@ -18,8 +17,7 @@ const Modal = ({content}) => {
     handleInput5, 
     handleInput6, 
     handleInput7,
-    handleInput8, 
-    handleInput9, 
+    handleInput8,  
     handleSelectSchool,
     input0, 
     input1, 
@@ -30,24 +28,13 @@ const Modal = ({content}) => {
     input6, 
     input7, 
     input8, 
-    input9, 
     success,
     error,
     loading,
     handleSubmit,
     setType,
     setSuccess,
-    setInput0,
-    setInput1,
-    setInput2,
-    setInput3,
-    setInput4,
-    setInput5,
-    setInput6,
-    setInput7,
-    setInput8,
-    setInput9,
-    setSelected,
+    setError,
     selected,
     schools
   } = React.useContext(cadContext)
@@ -55,7 +42,9 @@ const Modal = ({content}) => {
 
   React.useEffect(() => {
     setType(content.type)
-  }, [])
+  })
+
+  console.log(schools == true);
 
   return (  
     <>
@@ -64,6 +53,7 @@ const Modal = ({content}) => {
         <button onClick={() => {
           content.setModal('')
           setSuccess('')
+          setError('')
         }} className={style.modal__button__close}>
           <IconExit/>
         </button>
@@ -320,14 +310,17 @@ const Modal = ({content}) => {
                           type='text' 
                           value={input2} 
                           placeholder='Cargo'/>
-                        
+                      
+                      
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -391,11 +384,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -419,11 +414,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -442,7 +439,7 @@ const Modal = ({content}) => {
             </main>
           </section>
         )
-
+                                                 
         ||
         
         (
@@ -529,11 +526,13 @@ const Modal = ({content}) => {
 
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -599,11 +598,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -745,11 +746,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -767,11 +770,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -827,11 +832,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -849,11 +856,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -921,11 +930,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 
@@ -955,11 +966,13 @@ const Modal = ({content}) => {
                         
                         <select onChange={handleSelectSchool}>
                           {
-                            schools && schools.map(item => (
+                            schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
                                 {item.nome}
                               </option>
                             ))
+                            :
+                            <option>Ainda não tem escolas</option>
                           }
                         </select>
 

@@ -345,6 +345,7 @@ function CadProvider({children}){
         handleSubmit, 
         setType,
         setSuccess,
+        setError,
         setInput0,
         setInput1,
         setInput2,
