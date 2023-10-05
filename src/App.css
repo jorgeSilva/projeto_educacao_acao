@@ -79,9 +79,22 @@
   }
 } 
 
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.9);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 .container{
   display: grid;
   grid-template-columns: 5fr 2fr;
+  animation: fade-left .3s ease;
 }
 
 @media (max-width: 1230px) {

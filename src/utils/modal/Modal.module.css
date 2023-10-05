@@ -7,7 +7,8 @@
   backdrop-filter: blur(2px);
   display: block;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
+  padding-bottom: 5rem;
 }
 
 .modal__content__button{
@@ -29,6 +30,7 @@
   height: 56px;
   border-radius: 56px;
   cursor: pointer;
+  animation: fade-up .3s forwards;
 }
 
 .modal__button__close svg{
@@ -37,6 +39,11 @@
 
 .modal__content__form{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 /* ----------- content modal ------------------- */
@@ -49,12 +56,12 @@
 
 .login__content{
   grid-column: 3 / 11;
-  height: 80%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   transition: .3s ease;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  margin-bottom: 2rem;
+  animation: fade-left .3s forwards;
 }
 
 .login__left__side{
@@ -287,5 +294,29 @@
 @media (max-width: 420px) {
   .modal__container{
     min-height: 100%;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.9);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.9);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }

@@ -243,6 +243,7 @@
   justify-content: center;
   flex-direction: column;
   row-gap: 1rem;
+  animation: fade-left .3s;
 }
 
 .home__header__buttons__active button{
@@ -315,10 +316,35 @@
   transform: translateX(-50%);
   background-color: var(--c0);
   cursor: pointer;
+  animation: fade-down .3s;
 }
 
 .modal__button__open__active svg{
   fill: var(--c12);
   width: 24px;
   height: 24px;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) translateX(-27px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0px) translateX(-27px);
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }

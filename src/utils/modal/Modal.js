@@ -44,8 +44,6 @@ const Modal = ({content}) => {
     setType(content.type)
   })
 
-  console.log(schools == true);
-
   return (  
     <>
     <article className={style.modal__container}>
