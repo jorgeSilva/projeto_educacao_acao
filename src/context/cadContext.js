@@ -88,6 +88,18 @@ function CadProvider({children}){
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
       })
     }else if(type === 'convenio'){
       setLoading(true)
@@ -100,6 +112,18 @@ function CadProvider({children}){
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
       })
     }else if(type === 'servidor'){
       setLoading(true)
@@ -115,6 +139,18 @@ function CadProvider({children}){
         setError(e.response.data.error);
         console.log(selected);
         setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
       })
     }else if(type === 'professor'){
       setLoading(true)
@@ -128,6 +164,149 @@ function CadProvider({children}){
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'aluno'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nome: input0,
+        dataNasc: input1,
+        nomeMae: input2,
+        nomePai: input3,
+        rua: input4,
+        bairro: input5,
+        nCasa: input6,
+        contato: input7,
+        periodo: input8,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'escola'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nome: input0,
+        modalidade: input1,
+        n1: input2,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'aee'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nTurmas: input0,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'educacao-jovem-adulto'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nTurmas: input0,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'educacao-infantil'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nTurmas: input0,
+        parcial: input1,
+        integral: input2,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
       })
     }
   }

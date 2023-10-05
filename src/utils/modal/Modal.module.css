@@ -54,6 +54,7 @@
   grid-template-columns: repeat(8, 1fr);
   transition: .3s ease;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin-bottom: 2rem;
 }
 
 .login__left__side{
@@ -234,6 +235,9 @@
     padding: 1rem;
   }
   
+  .login__content{
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 564px) {

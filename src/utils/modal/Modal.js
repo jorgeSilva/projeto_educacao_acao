@@ -64,7 +64,6 @@ const Modal = ({content}) => {
         <button onClick={() => {
           content.setModal('')
           setSuccess('')
-          window.location.reload()
         }} className={style.modal__button__close}>
           <IconExit/>
         </button>
@@ -471,26 +470,152 @@ const Modal = ({content}) => {
                   </p>
 
                   <form className={style.login__form}>
-                    {/* {
+                    {
                       loading ?
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button className={style.login__button__loading} onClick={handleLogin}>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='Nome aluno'/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='date' 
+                          value={input1} 
+                          placeholder='Data de nascimento'/>
+
+                        <input 
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder='Nome da mãe'/>
+                          
+                        <input 
+                          onChange={handleInput3}
+                          type='text' 
+                          value={input3} 
+                          placeholder='Nome da pai'/>
+                        
+                        <input 
+                          onChange={handleInput4}
+                          type='text' 
+                          value={input4} 
+                          placeholder='Rua'/>
+                        
+                        <input 
+                          onChange={handleInput5}
+                          type='text' 
+                          value={input5} 
+                          placeholder='Bairro'/>
+
+                        <input 
+                          onChange={handleInput6}
+                          type='text' 
+                          value={input6} 
+                          placeholder='Numero da casa'/>
+
+                        <input 
+                          onChange={handleInput7}
+                          type='text' 
+                          value={input7} 
+                          placeholder='Contato'/>
+
+                        <input 
+                          onChange={handleInput8}
+                          type='text' 
+                          value={input8} 
+                          placeholder='Periodo'/>
+
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
                       </>
                       :
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button onClick={handleLogin}>Entrar</button>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='Nome aluno'/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='date' 
+                          value={input1} 
+                          placeholder='Data de nascimento'/>
+
+                        <input 
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder='Nome da mãe'/>
+                          
+                        <input 
+                          onChange={handleInput3}
+                          type='text' 
+                          value={input3} 
+                          placeholder='Nome da pai'/>
+                        
+                        <input 
+                          onChange={handleInput4}
+                          type='text' 
+                          value={input4} 
+                          placeholder='Rua'/>
+                        
+                        <input 
+                          onChange={handleInput5}
+                          type='text' 
+                          value={input5} 
+                          placeholder='Bairro'/>
+
+                        <input 
+                          onChange={handleInput6}
+                          type='text' 
+                          value={input6} 
+                          placeholder='Numero da casa'/>
+
+                        <input 
+                          onChange={handleInput7}
+                          type='text' 
+                          value={input7} 
+                          placeholder='Contato'/>
+
+                        <input 
+                          onChange={handleInput8}
+                          type='text' 
+                          value={input8} 
+                          placeholder='Periodo'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
                     {
-                      ((!email || !password)  && error && <Error content={error}/>)
-                    } */}
+                      !success && error && <Error content={error}/>
+                    }
                   </form>
                 </div>
               </section>
@@ -523,26 +648,60 @@ const Modal = ({content}) => {
                   </p>
 
                   <form className={style.login__form}>
-                    {/* {
+                    {
                       loading ?
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button className={style.login__button__loading} onClick={handleLogin}>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='Nome escola'/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='text' 
+                          value={input1} 
+                          placeholder='Modalidade'/>
+                        
+                        <input 
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder='Nasceu mais 1'/>
+
+                        <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
                       </>
                       :
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button onClick={handleLogin}>Entrar</button>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='Nome escola'/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='text' 
+                          value={input1} 
+                          placeholder='Modalidade'/>
+                        
+                        <input 
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder='Nasceu mais 1'/>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
                     {
-                      ((!email || !password)  && error && <Error content={error}/>)
-                    } */}
+                      !success && error && <Error content={error}/>
+                    }
                   </form>
                 </div>
               </section>
@@ -575,26 +734,56 @@ const Modal = ({content}) => {
                   </p>
 
                   <form className={style.login__form}>
-                    {/* {
+                    {
                       loading ?
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button className={style.login__button__loading} onClick={handleLogin}>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
                       </>
                       :
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button onClick={handleLogin}>Entrar</button>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
                     {
-                      ((!email || !password)  && error && <Error content={error}/>)
-                    } */}
+                      !success && error && <Error content={error}/>
+                    }
                   </form>
                 </div>
               </section>
@@ -627,26 +816,56 @@ const Modal = ({content}) => {
                   </p>
 
                   <form className={style.login__form}>
-                    {/* {
+                    {
                       loading ?
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button className={style.login__button__loading} onClick={handleLogin}>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
                       </>
                       :
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button onClick={handleLogin}>Entrar</button>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
                     {
-                      ((!email || !password)  && error && <Error content={error}/>)
-                    } */}
+                      !success && error && <Error content={error}/>
+                    }
                   </form>
                 </div>
               </section>
@@ -679,26 +898,80 @@ const Modal = ({content}) => {
                   </p>
 
                   <form className={style.login__form}>
-                    {/* {
+                    {
                       loading ?
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button className={style.login__button__loading} onClick={handleLogin}>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+
+                        <input 
+                          onChange={handleInput1} 
+                          type='text' 
+                          value={input1} 
+                          placeholder='N° de turmas parciais'/>
+                        
+                        <input 
+                          onChange={handleInput2} 
+                          type='text' 
+                          value={input2} 
+                          placeholder='N° de turmas integrais'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
                           <span className="loader"></span>
                         </button>  
                       </>
                       :
                       <>
-                        <input onChange={handleChangeEmail} required type='email' value={email} placeholder='Email'/>
-                        <input onChange={handleChangePassword} type='password' value={password} placeholder='Senha'/>
-                        <button onClick={handleLogin}>Entrar</button>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+
+                        <input 
+                          onChange={handleInput1} 
+                          type='text' 
+                          value={input1} 
+                          placeholder='N° de turmas parciais'/>
+                        
+                        <input 
+                          onChange={handleInput2} 
+                          type='text' 
+                          value={input2} 
+                          placeholder='N° de turmas integrais'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools && schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                          }
+                        </select>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
                       </>
                     }
 
                     {
-                      ((!email || !password)  && error && <Error content={error}/>)
-                    } */}
+                      !success && error && <Error content={error}/>
+                    }
                   </form>
                 </div>
               </section>
