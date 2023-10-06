@@ -28,9 +28,7 @@ const ButtonsOptions = ({content}) => {
           :
           <button 
           onClick={(e) => {
-            console.log(e.target.innerText);
             setCompare(e.target.innerText)
-            console.log(item.text);
             handleGet(item.url)
           }}
           className='rigth__side__option'

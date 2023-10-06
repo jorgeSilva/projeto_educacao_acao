@@ -11,11 +11,15 @@ function ButtonShowProvider({children}){
   const [escola, setEscola] = React.useState('')
 
   async function handleGet(e){
+    console.log(e);
     if(e){
       setLoading(true)
       await api.get(`${e}`)
       .then(({data}) => {
+        setData('')
         setData(data)
+        setEscola(data)
+        console.log(data);
         setLoading(false)
       }).catch(e => {
         console.log(e)

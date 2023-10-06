@@ -68,38 +68,36 @@ const Servidores = () => {
 
     <section className='rigth__side__show'>
       {
-        escola ? escola.map((item) => (
+        escola && escola.map((item) => (
           <section className='rigth__side__card' key={item._id}>
             {
               loading ?
-              <span className="loader"></span>
+              <span className="loader-"></span>
               :
               <>
-                <div className='rigth__content__card__edit'>
-                  <p className='card__text'>
-                    <span>Nome:</span> {item.nome}
-                  </p>
-                  <div>
-                    <button className='card__button__edit'>
-                      <IconEdit/>
-                    </button>
-                    <button className='card__button__edit'>
-                      <IconTrash/>
-                    </button>
-                  </div>
-                </div>
+              <div className='rigth__content__card__edit'>
                 <p className='card__text'>
-                  <span>Função:</span> {item.funcao}
+                  <span>Nome:</span> {item.nome}
                 </p>
-                <p className='card__text'>
-                  <span>Escola:</span> {item.fkescola.nome}
-                </p>  
+                <div>
+                  <button className='card__button__edit'>
+                    <IconEdit/>
+                  </button>
+                  <button className='card__button__edit'>
+                    <IconTrash/>
+                  </button>
+                </div>
+              </div>
+              <p className='card__text'>
+                <span>Função:</span> {item.funcao}
+              </p>
+              <p className='card__text'>
+                <span>Escola:</span> {item.fkescola.nome}
+              </p>  
               </>
             }
           </section>
         )) 
-        :
-        <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
       }
     </section>
     </div>
