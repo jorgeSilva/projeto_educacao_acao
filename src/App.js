@@ -5,17 +5,20 @@ import Login from "./login/Login"
 import Home from './view/Home';
 import { AuthProvider } from './context/authContext';
 import { CadProvider } from './context/cadContext';
+import { ButtonShowProvider } from './context/buttonShowContext';
 
 function App() {
   return (
     <AuthProvider>
       <CadProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Login/>}/>
-            <Route path="/home" element={<Home/>}/>
-          </Routes>
-        </BrowserRouter>
+        <ButtonShowProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Login/>}/>
+              <Route path="/home" element={<Home/>}/>
+            </Routes>
+          </BrowserRouter>
+        </ButtonShowProvider>
       </CadProvider>
     </AuthProvider>
   );

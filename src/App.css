@@ -97,6 +97,128 @@
   animation: fade-left .3s ease;
 }
 
+.rigth__side__container{
+  background-color: var(--p4);
+  min-height: 876px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  font-family: 'Raleway', sans-serif; 
+  margin-top: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.rigth__side__title{
+  color: var(--c0);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.5rem 1rem;
+}
+
+.rigth__side__content{
+  width: 100%;
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rigth__side__option{
+  background-color: transparent;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin: .5rem 1rem .5rem 0 ;
+  color: var(--c0);
+  border: 2px solid var(--c0);
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  transition: .3s ease;
+}
+
+.rigth__side__option__active{
+  background-color: var(--c0);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin: .5rem 1rem .5rem 0 ;
+  color: var(--p3);
+  border: 2px solid var(--p3);
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  transition: .3s ease;
+}
+
+.rigth__side__show{
+  width: 100%;
+  background-color: var(--c6);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+  height: 565px;
+}
+
+.rigth__side__text__report{
+  font-weight: 800;
+  font-size: .9rem;
+  width: 100%;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.rigth__content__card__edit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__button__edit{
+  background-color: var(--c8);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.rigth__content__card__edit div{
+  display: flex;
+  column-gap: .5rem;
+}
+
+.card__button__edit svg{
+  fill: var(--c12);
+}
+
+.card__button__edit:hover{
+  background-color: var(--c9);
+}
+
+.card__button__edit:hover svg{
+  fill: var(--c0);
+}
+
+
+.rigth__side__card{
+  background-color: var(--c7);
+  padding: 2rem;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-bottom: 1rem;
+  animation: fade-left .3s ;
+}
+
+.card__text span{
+  font-weight: 800;
+}
+
 @media (max-width: 1230px) {
   .container{
     display: grid;
@@ -105,5 +227,9 @@
 
   .rigth__side__container{
     margin-top: 3rem;
+  }
+
+  .rigth__side__show{
+    height: 705px;
   }
 }

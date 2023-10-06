@@ -12,6 +12,7 @@ import Escola from './escola/Escola'
 import ExitButton from '../utils/exit/ExitButton'
 import { Context } from '../context/authContext'
 import Search from '../utils/search/Search'
+import { buttonContext } from '../context/buttonShowContext'
 
 const Home = () => {
   const [btnHeader, setBtnHeader] = React.useState('Setor')
@@ -23,15 +24,23 @@ const Home = () => {
     handleLogout
   } = React.useContext(Context)
 
+  const {
+    setUrlPadrao
+  } = React.useContext(buttonContext)
+
   React.useEffect(() => {
     if(!token){
       window.location.href = '/'
     }
 
+    if(btnHeader){
+      setUrlPadrao(btnHeader)
+    }
+
     if(window.visualViewport.width <= 667){
       setActive(true)
     } 
-  }, [token])
+  }, [token, btnHeader])
     
   return (
     <main className={style.home__body}>
