@@ -111,6 +111,26 @@ const Cadastro = ({content}) => {
                       </>
                     }
                   </div>
+
+                  <div>
+                    {
+                      item.text === 'Adicionar escolas do tipo PRE' && 
+                      <> 
+                        <IconCadModalidade/>
+                        <p>{item.text}</p>
+                      </>
+                    }
+                  </div>
+
+                  <div>
+                    {
+                      item.text === 'Adicionar escolas do tipo CRECHE' && 
+                      <> 
+                        <IconCadModalidade/>
+                        <p>{item.text}</p>
+                      </>
+                    }
+                  </div>
                 
                 </button>
               }
@@ -231,6 +251,32 @@ const Cadastro = ({content}) => {
             <Modal content={
               {
                 type: 'educacao-infantil',
+                setModal
+              }
+            }/>
+          </> 
+        )
+        ||
+        (
+          modal && modal === 'Adicionar escolas do tipo PRE'
+          &&
+          <>
+            <Modal content={
+              {
+                type: 'pre',
+                setModal
+              }
+            }/>
+          </> 
+        )
+        ||
+        (
+          modal && modal === 'Adicionar escolas do tipo CRECHE'
+          &&
+          <>
+            <Modal content={
+              {
+                type: 'creche',
                 setModal
               }
             }/>

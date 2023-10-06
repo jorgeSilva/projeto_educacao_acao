@@ -9,6 +9,7 @@ function ButtonShowProvider({children}){
   const [urlPadrao, setUrlPadrao] = React.useState('')
   const [loading, setLoading] = React.useState('')
   const [escola, setEscola] = React.useState('')
+  const [type, setType] = React.useState('')
 
   async function handleGet(e){
     console.log(e);
@@ -50,9 +51,11 @@ function ButtonShowProvider({children}){
   return(
     <buttonContext.Provider value={
       { 
+        setType,
         setUrl,
         setUrlPadrao,
         handleGet,
+        type,
         loading,
         escola,
         data

@@ -308,6 +308,54 @@ function CadProvider({children}){
         setInput9('')
         setSelected('')
       })
+    }else if(type === 'pre'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nTurmas: input0,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'creche'){
+      setLoading(true)
+      await api.post(`${type}`, {
+        nTurmas: input0,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
     }
   }
 

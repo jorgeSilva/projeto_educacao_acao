@@ -6,6 +6,7 @@ const ButtonsOptions = ({content}) => {
   const [compare, setCompare] = React.useState('')
 
   const {
+    setType,
     handleGet
   } = React.useContext(buttonContext)
 
@@ -17,6 +18,7 @@ const ButtonsOptions = ({content}) => {
             <button 
               onClick={(e) => {
                 setCompare(e.target.innerText)
+                setType(e.target.innerText)
                 handleGet(item.url)
               }}
               className='rigth__side__option__active'
@@ -29,6 +31,7 @@ const ButtonsOptions = ({content}) => {
           <button 
           onClick={(e) => {
             setCompare(e.target.innerText)
+            setType(e.target.innerText)
             handleGet(item.url)
           }}
           className='rigth__side__option'

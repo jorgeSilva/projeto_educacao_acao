@@ -989,6 +989,178 @@ const Modal = ({content}) => {
             </main>
           </section>
         )
+        ||
+        (
+          content.type && content.type === 'pre'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                <div className={style.login__left__side}>
+                  <section className={style.login__svg__logo}>
+                    <SvgLogo/>
+                  </section>
+
+                  <section className={style.login__svg__icon}>
+                    <SvgIcon/>
+                  </section>
+                </div>
+
+                <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Cadastre as turmas de cada escola PRÉ
+                  </h1>
+                  <p className={style.login__text__aux}>
+                  Os dados aqui coletados serão transformados em estatisticas
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools[0] ? schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                            :
+                            <option>Ainda não tem escolas</option>
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools[0] ? schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                            :
+                            <option>Ainda não tem escolas</option>
+                          }
+                        </select>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section>
+            </main>
+          </section>
+        )
+        ||
+        (
+          content.type && content.type === 'creche'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                <div className={style.login__left__side}>
+                  <section className={style.login__svg__logo}>
+                    <SvgLogo/>
+                  </section>
+
+                  <section className={style.login__svg__icon}>
+                    <SvgIcon/>
+                  </section>
+                </div>
+
+                <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Cadastre as turmas de cada escola CRECHE
+                  </h1>
+                  <p className={style.login__text__aux}>
+                  Os dados aqui coletados serão transformados em estatisticas
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools[0] ? schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                            :
+                            <option>Ainda não tem escolas</option>
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='N° de turmas'/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          {
+                            schools[0] ? schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                            :
+                            <option>Ainda não tem escolas</option>
+                          }
+                        </select>
+
+                        <button onClick={handleSubmit}>
+                          Cadastrar
+                        </button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section>
+            </main>
+          </section>
+        )
       }
       {
         success && <Success content={success}/>
