@@ -276,6 +276,7 @@ const Modal = ({content}) => {
                           placeholder='Cargo'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option disabled></option>
                           {
                             schools && schools.map(item => (
                               <option key={item._id} value={selected}>
@@ -311,6 +312,7 @@ const Modal = ({content}) => {
                       
                       
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -381,6 +383,8 @@ const Modal = ({content}) => {
                           placeholder='Cargo'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option disabled></option>
+
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -411,6 +415,8 @@ const Modal = ({content}) => {
                           placeholder='Cargo'/>
                         
                         <select onChange={handleSelectSchool}>
+                        <option></option>
+
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -523,6 +529,8 @@ const Modal = ({content}) => {
                           placeholder='Periodo'/>
 
                         <select onChange={handleSelectSchool}>
+                        <option disabled></option>
+
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -595,6 +603,7 @@ const Modal = ({content}) => {
                           placeholder='Periodo'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -743,6 +752,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option disabled></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -767,6 +777,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -829,6 +840,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option disabled></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -853,6 +865,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -927,6 +940,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas integrais'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option disabled></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -963,6 +977,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas integrais'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option ></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -1025,6 +1040,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -1049,6 +1065,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -1111,6 +1128,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option disabled></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
@@ -1135,6 +1153,7 @@ const Modal = ({content}) => {
                           placeholder='N° de turmas'/>
                         
                         <select onChange={handleSelectSchool}>
+                          <option></option>
                           {
                             schools[0] ? schools.map(item => (
                               <option key={item._id} value={item._id}>
