@@ -1,7 +1,8 @@
 .home__body{
   background-color: var(--c5);
-  height: 100%;
-  padding: 1rem;
+  height: 100dvh;
+  position: relative;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .home__header{

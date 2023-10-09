@@ -10,7 +10,8 @@ import { ReactComponent as IconTrash } from '../../assets/Home/trash3-fill.svg'
 const Setor = () => {
 
   const {
-    data
+    data,
+    loading
   } = React.useContext(buttonContext)
 
   return (
@@ -70,25 +71,32 @@ const Setor = () => {
           {
             data ? data.map((item) => (
               <section className='rigth__side__card' key={item._id}>
-                <div className='rigth__content__card__edit'>
-                  <p className='card__text'>
-                    <span>Nome:</span> {item.nome}
-                  </p>
-                  <div>
-                    <button className='card__button__edit'>
-                      <IconEdit/>
-                    </button>
-                    <button className='card__button__edit'>
-                      <IconTrash/>
-                    </button>
-                  </div>
-                </div>
-                <p className='card__text'>
-                  <span>Setor:</span> {item.setor}
-                </p>
-                <p className='card__text'>
-                  <span>Obs:</span> {item.obs}
-                </p>
+                {
+                   loading ?
+                   <span className="loader-"></span>
+                   :
+                   <>
+                     <div className='rigth__content__card__edit'>
+                      <p className='card__text'>
+                        <span>Nome:</span> {item.nome}
+                      </p>
+                      <div>
+                        <button className='card__button__edit'>
+                          <IconEdit/>
+                        </button>
+                        <button className='card__button__edit'>
+                          <IconTrash/>
+                        </button>
+                      </div>
+                    </div>
+                    <p className='card__text'>
+                      <span>Setor:</span> {item.setor}
+                    </p>
+                    <p className='card__text'>
+                      <span>Obs:</span> {item.obs}
+                    </p>
+                   </>
+                }
               </section>
             )) 
             :
