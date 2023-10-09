@@ -5,6 +5,8 @@ import ButtonsOptions from '../../utils/buttonsOptions/ButtonsOptions'
 import { buttonContext } from '../../context/buttonShowContext'
 import { ReactComponent as IconEdit } from '../../assets/Home/canetaEdicao.svg'
 import { ReactComponent as IconTrash } from '../../assets/Home/trash3-fill.svg' 
+import { buttonLetContext } from '../../context/buttonsLeftShowContext'
+import ButtonsLeftOption from '../../utils/buttonsLeftOptions/ButtonsLeftOption'
 
 const Escola = () => {
   const {
@@ -14,7 +16,10 @@ const Escola = () => {
     loading
   } = React.useContext(buttonContext)
 
-  console.log(type);
+  const {
+    escolaLeft,
+    loadingLeft
+  } = React.useContext(buttonLetContext)
 
   return (
     <article className='container'>
@@ -52,6 +57,151 @@ const Escola = () => {
             }
           ]
         }/>
+        <section className='left__side__container__show'>
+        <h2 className='rigth__side__title'>Servidores</h2>
+
+        <section className='left__side__content'>
+          <ButtonsLeftOption content={[
+            {
+              text: 'EMEI',
+              url: 'emei/show',
+              select: 'escola'
+            },
+            {
+              text: 'Vila Dom Silvio',
+              url: 'vila/show',
+              select: 'escola'
+            },
+            {
+              text: 'Agrovila III',
+              url: 'agro/show',
+              select: 'escola'
+            },
+            {
+              text: 'Toriba',
+              url: 'toriba/show',
+              select: 'escola'
+            },
+            {
+              text: 'Favo de mel',
+              url: 'favo/show',
+              select: 'escola'
+            },
+            {
+              text: 'EE Jardim Santa Inês',
+              url: 'jardim/show',
+              select: 'escola'
+            }
+          ]}/>
+        </section>
+        <div className='left__side__show'>
+          {
+            escolaLeft ?
+
+            <section className='rigth__side__card'>
+            {
+              loadingLeft ?
+              <span className="loader-"></span>
+              :
+              <>
+              {
+                escolaLeft.escola[0] && 
+                <>
+                  <div className='rigth__content__card__edit'>
+                    <p className='card__text'>
+                      <span>Nome:</span> {escolaLeft.escola[0].nome}
+                    </p>
+                    <div>
+                      <button className='card__button__edit'>
+                        <IconEdit/>
+                      </button>
+                      <button className='card__button__edit'>
+                        <IconTrash/>
+                      </button>
+                    </div>
+                  </div>
+                  <p className='card__text'>
+                    <span>Modalidade:</span> {escolaLeft.escola[0].modalidade}
+                  </p>
+                  <p className='card__text'>
+                    <span>N + 1C:</span> {escolaLeft.escola[0].n1}
+                  </p>
+                  {
+                    escolaLeft.aee[0] ?
+                    <p className='card__text'>
+                      <span>Turmas AEE:</span> {escolaLeft.aee[0].nTurmas}
+                    </p>
+                    :
+                    <p className='card__text'>
+                      <span>Turmas AEE:</span> Nenhuma
+                    </p>
+                  }
+                  {
+                    escolaLeft.eja[0] ?
+                    <p className='card__text'>
+                      <span>Turmas EJA:</span> {escolaLeft.eja[0].nTurmas}
+                    </p>
+                    :
+                    <p className='card__text'>
+                      <span>Turmas EJA:</span> Nenhuma
+                    </p>
+                  }
+                  {
+                    escolaLeft.ei[0] ?
+                    <>
+                      <p className='card__text'>
+                        <span>Turmas EI:</span> {escolaLeft.ei[0].nTurmas}
+                      </p>
+                      <p className='card__text'>
+                        <span>N° turmas parciais:</span> {escolaLeft.ei[0].parcial}
+                      </p>
+                      <p className='card__text'>
+                        <span>N° turmas integrais:</span> {escolaLeft.ei[0].integral}
+                      </p>
+                    </>
+                    :
+                    <>
+                      <p className='card__text'>
+                        <span>Turmas EI:</span> Nenhuma
+                      </p>
+                      <p className='card__text'>
+                        <span>N° turmas parciais:</span> Nenhuma
+                      </p>
+                      <p className='card__text'>
+                        <span>N° turmas integrais:</span> Nenhuma
+                      </p>
+                    </>
+                  }
+                  {
+                    escolaLeft.creche[0] ?
+                    <p className='card__text'>
+                      <span>Turmas Creche:</span> {escolaLeft.creche[0].nTurmas}
+                    </p>
+                    :
+                    <p className='card__text'>
+                      <span>Turmas EJA:</span> Nenhuma
+                    </p>
+                  }
+                  {
+                    escolaLeft.pre[0] ?
+                    <p className='card__text'>
+                      <span>Turmas Pré:</span> {escolaLeft.pre[0].nTurmas}
+                    </p>
+                    :
+                    <p className='card__text'>
+                      <span>Turmas EJA:</span> Nenhuma
+                    </p>
+                  }
+                </>
+              }
+              </>
+            }
+            </section>
+            :
+            <p style={{textAlign:'center'}}>Selecione uma opção</p>
+          }
+        </div>
+      </section>
       </section>
       <div className='rigth__side__container'>
         <h2 className='rigth__side__title'>Modalidade Escolar</h2>
