@@ -58,7 +58,7 @@ const Escola = () => {
           ]
         }/>
         <section className='left__side__container__show'>
-        <h2 className='rigth__side__title'>Servidores</h2>
+        <h2 className='rigth__side__title'>Escola</h2>
 
         <section className='left__side__content'>
           <ButtonsLeftOption content={[
@@ -120,78 +120,90 @@ const Escola = () => {
                       </button>
                     </div>
                   </div>
-                  <p className='card__text'>
-                    <span>Modalidade:</span> {escolaLeft.escola[0].modalidade}
-                  </p>
-                  <p className='card__text'>
-                    <span>N + 1C:</span> {escolaLeft.escola[0].n1}
-                  </p>
-                  {
-                    escolaLeft.aee[0] ?
-                    <p className='card__text'>
-                      <span>Turmas AEE:</span> {escolaLeft.aee[0].nTurmas}
-                    </p>
-                    :
-                    <p className='card__text'>
-                      <span>Turmas AEE:</span> Nenhuma
-                    </p>
-                  }
-                  {
-                    escolaLeft.eja[0] ?
-                    <p className='card__text'>
-                      <span>Turmas EJA:</span> {escolaLeft.eja[0].nTurmas}
-                    </p>
-                    :
-                    <p className='card__text'>
-                      <span>Turmas EJA:</span> Nenhuma
-                    </p>
-                  }
-                  {
-                    escolaLeft.ei[0] ?
-                    <>
+                  <div className='card__style__school'>
+                    <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
                       <p className='card__text'>
-                        <span>Turmas EI:</span> {escolaLeft.ei[0].nTurmas}
+                        <span>Modalidade:</span> {escolaLeft.escola[0].modalidade}
                       </p>
                       <p className='card__text'>
-                        <span>N° turmas parciais:</span> {escolaLeft.ei[0].parcial}
+                        <span>N + 1C:</span> {escolaLeft.escola[0].n1}
                       </p>
+                      {
+                        escolaLeft.aee[0] ?
+                        <p className='card__text'>
+                          <span>Turmas AEE:</span> {escolaLeft.aee[0].nTurmas}
+                        </p>
+                        :
+                        <p className='card__text'>
+                          <span>Turmas AEE:</span> Nenhuma
+                        </p>
+                      }
+                    </span>
+
+                    <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
+
+                    {
+                      escolaLeft.eja[0] ?
                       <p className='card__text'>
-                        <span>N° turmas integrais:</span> {escolaLeft.ei[0].integral}
+                        <span>Turmas EJA:</span> {escolaLeft.eja[0].nTurmas}
                       </p>
-                    </>
-                    :
-                    <>
+                      :
                       <p className='card__text'>
-                        <span>Turmas EI:</span> Nenhuma
+                        <span>Turmas EJA:</span> Nenhuma
                       </p>
+                    }
+
+                    {
+                      escolaLeft.creche[0] ?
                       <p className='card__text'>
-                        <span>N° turmas parciais:</span> Nenhuma
+                        <span>Turmas Creche:</span> {escolaLeft.creche[0].nTurmas}
                       </p>
+                      :
                       <p className='card__text'>
-                        <span>N° turmas integrais:</span> Nenhuma
+                        <span>Turmas Creche:</span> Nenhuma
                       </p>
-                    </>
-                  }
-                  {
-                    escolaLeft.creche[0] ?
-                    <p className='card__text'>
-                      <span>Turmas Creche:</span> {escolaLeft.creche[0].nTurmas}
-                    </p>
-                    :
-                    <p className='card__text'>
-                      <span>Turmas EJA:</span> Nenhuma
-                    </p>
-                  }
-                  {
-                    escolaLeft.pre[0] ?
-                    <p className='card__text'>
-                      <span>Turmas Pré:</span> {escolaLeft.pre[0].nTurmas}
-                    </p>
-                    :
-                    <p className='card__text'>
-                      <span>Turmas EJA:</span> Nenhuma
-                    </p>
-                  }
+                    }
+                    {
+                      escolaLeft.pre[0] ?
+                      <p className='card__text'>
+                        <span>Turmas Pré:</span> {escolaLeft.pre[0].nTurmas}
+                      </p>
+                      :
+                      <p className='card__text'>
+                        <span>Turmas Pré:</span> Nenhuma
+                      </p>
+                    }
+                    </span>
+
+                    <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
+                    {
+                      escolaLeft.ei[0] ?
+                      <>
+                        <p className='card__text'>
+                          <span>Turmas EI:</span> {escolaLeft.ei[0].nTurmas}
+                        </p>
+                        <p className='card__text'>
+                          <span>N° turmas parciais:</span> {escolaLeft.ei[0].parcial}
+                        </p>
+                        <p className='card__text'>
+                          <span>N° turmas integrais:</span> {escolaLeft.ei[0].integral}
+                        </p>
+                      </>
+                      :
+                      <>
+                        <p className='card__text'>
+                          <span>Turmas EI:</span> Nenhuma
+                        </p>
+                        <p className='card__text'>
+                          <span>N° turmas parciais:</span> Nenhuma
+                        </p>
+                        <p className='card__text'>
+                          <span>N° turmas integrais:</span> Nenhuma
+                        </p>
+                      </>
+                    }
+                    </span>
+                  </div>
                 </>
               }
               </>

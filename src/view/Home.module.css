@@ -1,14 +1,8 @@
 .home__body{
   background-color: var(--c5);
-  height: 100dvh;
+  height: 100%;
   position: relative;
-  padding: 1rem 1rem 0 1rem;
-}
-
-@media (max-width: 1230px) {
-  .home__body{
-    height: 200dvh;
-  }
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 .home__header{
@@ -235,10 +229,13 @@
   background-color: rgba(73, 73, 73, 0.822);
   backdrop-filter: blur(1px);
   position: absolute;
+  overflow: hidden;
+  height: 100vh;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 5;
 }
 
 .home__header__buttons__active{
