@@ -6,6 +6,9 @@ import ButtonsOptions from '../../utils/buttonsOptions/ButtonsOptions'
 import { buttonContext } from '../../context/buttonShowContext'
 import { ReactComponent as IconEdit } from '../../assets/Home/canetaEdicao.svg'
 import { ReactComponent as IconTrash } from '../../assets/Home/trash3-fill.svg'
+import ButtonsLeftOption from '../../utils/buttonsLeftOptions/ButtonsLeftOption'
+import ApexChart from '../../utils/grafico/ApexChart'
+import Chart from '../../utils/grafico/ApexChart'
 
 const Setor = () => {
 
@@ -30,6 +33,13 @@ const Setor = () => {
             }
           ]
         }/>
+
+      <section className='left__side__container__show'>
+        <h2 className='rigth__side__title'>Convenio</h2>
+        <div className='left__side__show__convenio'>
+          <Chart/>
+        </div>
+      </section>
       </section>
       <article className='rigth__side__container'>
         <h2 className='rigth__side__title'>Funcionáros</h2>
