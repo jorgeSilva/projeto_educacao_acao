@@ -6,15 +6,17 @@
 }
 
 .home__header{
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: space-between;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .home__header__icon__systech{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .home__header__icon__systech svg{
@@ -24,7 +26,6 @@
 .home__header__buttons{
   display: flex;
   column-gap: .5rem;
-  margin-left: 19rem;
   align-items: center;
   justify-content: center;
 }
@@ -187,42 +188,11 @@
 }
 
 .home__header__search{
-  width: 500px;
   height: 56px;
   display: flex;
   align-items: center;
   column-gap: .5rem;
   justify-content: flex-end;
-}
-
-@media (max-width: 1225px) {
-  .home__header__buttons{
-    margin-left: 10rem;
-  }
-}
-
-@media (max-width: 814px) {
-  .home__header__buttons{
-    margin-left: 6rem;
-  }
-}
-
-@media (max-width: 764px) {
-  .home__header__buttons{
-    margin-left: 5rem;
-  }
-}
-
-@media (max-width: 740px) {
-  .home__header__buttons{
-    margin-left: .5rem;
-  }
-}
-
-@media (max-width: 667px) {
-  .home__header__buttons{
-    margin-left: .5rem;
-  }
 }
 
 .home__content__modal{
@@ -256,7 +226,7 @@
 }
 
 .modal__button__open{
-  width: 96px;
+  width: 48px;
   margin-left: 1rem;
   height: 48px;
   border-radius: 60px;
@@ -266,6 +236,8 @@
   justify-content: center;
   background-color: var(--c0);
   cursor: pointer;
+  grid-row: 1;
+  display: none;
 }
 
 .modal__button__open svg{
@@ -274,33 +246,61 @@
   height: 18px;
 }
 
-@media (max-width: 470px) {
-  .modal__button__open{
-    width: 120px;
+@media (max-width: 667px) {
+  .home__header__search:nth-child(1n){
+    grid-row: 2;
+    grid-column: 1 / -1;
   }
+
+  .home__header__buttons{
+    /* display: flex; */
+    column-gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+
+  .modal__button__open{
+    grid-column: 3;
+    justify-self: flex-end;
+    grid-row: 1;
+    display: block;
+  }
+
+  .modal__button__open__active{
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    border: none;
+    border-radius: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--c0);
+    cursor: pointer;
+    animation: fade-down .3s;
+    display: block;
+  }
+  
 }
 
-@media (max-width: 420px) {
-  .home__body{
-    min-height: 100%;
+@media (max-width: 480px) {
+  .home__header__search:nth-child(1n){
+    grid-row: 2;
+    grid-column: 1 / -1;
   }
 
   .modal__button__open{
-    width: 140px;
-  }
-}
-
-@media (max-width: 400px) {
-  .modal__button__open{
-    width: 160px;
+    grid-column: 3;
+    justify-self: flex-end;
+    grid-row: 1;
   }
 }
 
 @media (max-width: 370px) {
-  .modal__button__open{
-    width: 190px;
-  }
-
   .home__header__icon__systech svg{
     width: 120px;
   }
@@ -321,6 +321,7 @@
   background-color: var(--c0);
   cursor: pointer;
   animation: fade-down .3s;
+  display: none;
 }
 
 .modal__button__open__active svg{

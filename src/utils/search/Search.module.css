@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-left: 1rem;
+  transition: .3s ease;
 }
 
 .search__content button{
@@ -12,6 +12,7 @@
   outline: none;
   border: none;
   background-color: transparent;
+  transition: .3s ease;
 }
 
 .search{
@@ -25,6 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .3s ease;
 }
 
 .search:hover{
@@ -42,6 +44,7 @@
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
   padding-left: 1rem;
+  transition: .3s ease;
 }
 
 .search__content input:focus{
@@ -61,6 +64,7 @@
   justify-content: center;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
+  transition: .3s ease;
 }
 
 .search__active svg{

@@ -50,11 +50,12 @@
 @media (max-width: 432px) {
   .cadastro__content{
     background-color: var(--c0);
-    padding: 1rem 2rem;
+    padding: .5rem 1rem;
     border-radius: 4rem;
     border: 2px solid var(--c8);
     transition: .3s ease;
     width: 100%;
+    font-size: .85rem;
   }
 
   .cadastro__content div p{

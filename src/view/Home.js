@@ -50,186 +50,182 @@ const Home = () => {
           <IconSysTech/>
         </div>
 
-        {
-          active ?
-            <>
-              {
-                modal ? 
-                <div className={style.home__content__modal}>
-                  <button onClick={() => setModal(!modal)} className={style.modal__button__open__active}>
-                    <IconExit/>
-                  </button>
-
-                  <section className={style.home__header__buttons__active}>
-                    {
-                      (!btnHeader &&
-                      <>
-                        <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
-                          <IconSetor/>
-                        </button>
-                        <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
-                          <IconServidores/>
-                        </button>
-                        <button onClick={() => {
-                          setBtnHeader('Escola')
-                          setType('Escola')
-                        }} className={style.home__header__icon__escola}>
-                          <IconEscola/>
-                        </button> 
-                      </>)
-
-                      ||
-
-                      (btnHeader === 'Setor' &&
-                      <>
-                        <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor__active}>
-                          <div>
-                            <IconSetor/>
-                          </div>
-                          <p>Setor</p>
-                        </button>
-                        <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
-                          <IconServidores/>
-                        </button>
-                        <button onClick={() => {
-                          setBtnHeader('Escola')
-                          setType('Escola')
-                        }} className={style.home__header__icon__escola}>
-                          <IconEscola/>
-                        </button> 
-                      </>)
-
-                      ||
-
-                      (btnHeader === 'Servidores' &&
-                      <>
-                        <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
-                          <IconSetor/>
-                        </button>
-                        <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv__active}>
-
-                          <IconServidores/>
-                          <p>Servidores</p>
-                        </button>
-                        <button onClick={() => {
-                          setBtnHeader('Escola')
-                          setType('Escola')
-                        }} className={style.home__header__icon__escola}>
-                          <IconEscola/>
-                        </button> 
-                      </>)
-
-                      ||
-
-                      (btnHeader === 'Escola' &&
-                      <>
-                        <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
-                          <IconSetor/>
-                        </button>
-                        <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
-                          <IconServidores/>
-                        </button>
-                        <button onClick={() => {
-                          setBtnHeader('Escola')
-                          setType('Escola')
-                        }} className={style.home__header__icon__escola__active}>
-                          <IconEscola/>
-                          <p>Escola</p>
-                        </button> 
-                      </>)
-                    }
-                  </section>
-                </div>
-
-                :
-                <button onClick={() => setModal(!modal)} className={style.modal__button__open}>
-                  <IconMenu/>
+          <>
+            {
+              modal ? 
+              <div className={style.home__content__modal}>
+                <button onClick={() => setModal(!modal)} className={style.modal__button__open__active}>
+                  <IconExit/>
                 </button>
-              }
 
-            </>
+                <section className={style.home__header__buttons__active}>
+                  {
+                    (!btnHeader &&
+                    <>
+                      <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                        <IconSetor/>
+                      </button>
+                      <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
+                        <IconServidores/>
+                      </button>
+                      <button onClick={() => {
+                        setBtnHeader('Escola')
+                        setType('Escola')
+                      }} className={style.home__header__icon__escola}>
+                        <IconEscola/>
+                      </button> 
+                    </>)
 
-          :
-            <section className={style.home__header__buttons}>
-              {
-                (!btnHeader &&
-                <>
-                  <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                    ||
+
+                    (btnHeader === 'Setor' &&
+                    <>
+                      <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor__active}>
+                        <div>
+                          <IconSetor/>
+                        </div>
+                        <p>Setor</p>
+                      </button>
+                      <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
+                        <IconServidores/>
+                      </button>
+                      <button onClick={() => {
+                        setBtnHeader('Escola')
+                        setType('Escola')
+                      }} className={style.home__header__icon__escola}>
+                        <IconEscola/>
+                      </button> 
+                    </>)
+
+                    ||
+
+                    (btnHeader === 'Servidores' &&
+                    <>
+                      <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                        <IconSetor/>
+                      </button>
+                      <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv__active}>
+
+                        <IconServidores/>
+                        <p>Servidores</p>
+                      </button>
+                      <button onClick={() => {
+                        setBtnHeader('Escola')
+                        setType('Escola')
+                      }} className={style.home__header__icon__escola}>
+                        <IconEscola/>
+                      </button> 
+                    </>)
+
+                    ||
+
+                    (btnHeader === 'Escola' &&
+                    <>
+                      <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                        <IconSetor/>
+                      </button>
+                      <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
+                        <IconServidores/>
+                      </button>
+                      <button onClick={() => {
+                        setBtnHeader('Escola')
+                        setType('Escola')
+                      }} className={style.home__header__icon__escola__active}>
+                        <IconEscola/>
+                        <p>Escola</p>
+                      </button> 
+                    </>)
+                  }
+                </section>
+              </div>
+
+              :
+              <button onClick={() => setModal(!modal)} className={style.modal__button__open}>
+                <IconMenu/>
+              </button>
+            }
+
+          </>
+          <section className={style.home__header__buttons}>
+            {
+              (!btnHeader &&
+              <>
+                <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                  <IconSetor/>
+                </button>
+                <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
+                  <IconServidores/>
+                </button>
+                <button onClick={() => {
+                  setBtnHeader('Escola')
+                  setType('Escola')
+                }} className={style.home__header__icon__escola}>
+                  <IconEscola/>
+                </button> 
+              </>)
+
+              ||
+
+              (btnHeader === 'Setor' &&
+              <>
+                <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor__active}>
+                  <div>
                     <IconSetor/>
-                  </button>
-                  <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
-                    <IconServidores/>
-                  </button>
-                  <button onClick={() => {
-                    setBtnHeader('Escola')
-                    setType('Escola')
-                  }} className={style.home__header__icon__escola}>
-                    <IconEscola/>
-                  </button> 
-                </>)
+                  </div>
+                  <p>Setor</p>
+                </button>
+                <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
+                  <IconServidores/>
+                </button>
+                <button onClick={() => {
+                  setBtnHeader('Escola')
+                  setType('Escola')
+                }} className={style.home__header__icon__escola}>
+                  <IconEscola/>
+                </button> 
+              </>)
 
-                ||
+              ||
 
-                (btnHeader === 'Setor' &&
-                <>
-                  <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor__active}>
-                    <div>
-                      <IconSetor/>
-                    </div>
-                    <p>Setor</p>
-                  </button>
-                  <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
-                    <IconServidores/>
-                  </button>
-                  <button onClick={() => {
-                    setBtnHeader('Escola')
-                    setType('Escola')
-                  }} className={style.home__header__icon__escola}>
-                    <IconEscola/>
-                  </button> 
-                </>)
+              (btnHeader === 'Servidores' &&
+              <>
+                <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                  <IconSetor/>
+                </button>
+                <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv__active}>
 
-                ||
+                  <IconServidores/>
+                  <p>Servidores</p>
+                </button>
+                <button onClick={() => {
+                  setBtnHeader('Escola')
+                  setType('Escola')
+                }} className={style.home__header__icon__escola}>
+                  <IconEscola/>
+                </button> 
+              </>)
 
-                (btnHeader === 'Servidores' &&
-                <>
-                  <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
-                    <IconSetor/>
-                  </button>
-                  <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv__active}>
+              ||
 
-                    <IconServidores/>
-                    <p>Servidores</p>
-                  </button>
-                  <button onClick={() => {
-                    setBtnHeader('Escola')
-                    setType('Escola')
-                  }} className={style.home__header__icon__escola}>
-                    <IconEscola/>
-                  </button> 
-                </>)
-
-                ||
-
-                (btnHeader === 'Escola' &&
-                <>
-                  <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
-                    <IconSetor/>
-                  </button>
-                  <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
-                    <IconServidores/>
-                  </button>
-                  <button onClick={() => {
-                    setBtnHeader('Escola')
-                    setType('Escola')
-                  }} className={style.home__header__icon__escola__active}>
-                    <IconEscola/>
-                    <p>Escola</p>
-                  </button> 
-                </>)
-              }
-            </section>
-        }
+              (btnHeader === 'Escola' &&
+              <>
+                <button onClick={() => setBtnHeader('Setor')} className={style.home__header__icon__setor}>
+                  <IconSetor/>
+                </button>
+                <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
+                  <IconServidores/>
+                </button>
+                <button onClick={() => {
+                  setBtnHeader('Escola')
+                  setType('Escola')
+                }} className={style.home__header__icon__escola__active}>
+                  <IconEscola/>
+                  <p>Escola</p>
+                </button> 
+              </>)
+            }
+          </section>
+        
           
         <section className={style.home__header__search}>
           <Search/>
