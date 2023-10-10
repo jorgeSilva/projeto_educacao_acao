@@ -58,162 +58,163 @@ const Escola = () => {
           ]
         }/>
         <section className='left__side__container__show'>
-        <h2 className='rigth__side__title'>Escola</h2>
+          <h2 className='rigth__side__title'>Escola</h2>
 
-        <section className='left__side__content'>
-          <ButtonsLeftOption content={[
-            {
-              text: 'EMEI',
-              url: 'emei/show',
-              select: 'escola'
-            },
-            {
-              text: 'Vila Dom Silvio',
-              url: 'vila/show',
-              select: 'escola'
-            },
-            {
-              text: 'Agrovila III',
-              url: 'agro/show',
-              select: 'escola'
-            },
-            {
-              text: 'Toriba',
-              url: 'toriba/show',
-              select: 'escola'
-            },
-            {
-              text: 'Favo de mel',
-              url: 'favo/show',
-              select: 'escola'
-            },
-            {
-              text: 'EE Jardim Santa Inês',
-              url: 'jardim/show',
-              select: 'escola'
-            }
-          ]}/>
-        </section>
-        <div className='left__side__show'>
-          {
-            escolaLeft ?
-
-            <section className='rigth__side__card'>
-            {
-              loadingLeft ?
-              <span className="loader-"></span>
-              :
-              <>
+          <section className='left__side__content'>
+            <ButtonsLeftOption content={[
               {
-                escolaLeft.escola[0] && 
+                text: 'EMEI',
+                url: 'emei/show',
+                select: 'escola'
+              },
+              {
+                text: 'Vila Dom Silvio',
+                url: 'vila/show',
+                select: 'escola'
+              },
+              {
+                text: 'Agrovila III',
+                url: 'agro/show',
+                select: 'escola'
+              },
+              {
+                text: 'Toriba',
+                url: 'toriba/show',
+                select: 'escola'
+              },
+              {
+                text: 'Favo de mel',
+                url: 'favo/show',
+                select: 'escola'
+              },
+              {
+                text: 'EE Jardim Santa Inês',
+                url: 'jardim/show',
+                select: 'escola'
+              }
+            ]}/>
+          </section>
+          
+          <div className='left__side__show'>
+            {
+              escolaLeft ?
+
+              <section className='rigth__side__card'>
+              {
+                loadingLeft ?
+                <span className="loader-"></span>
+                :
                 <>
-                  <div className='rigth__content__card__edit'>
-                    <p className='card__text'>
-                      <span>Nome:</span> {escolaLeft.escola[0].nome}
-                    </p>
-                    <div>
-                      <button className='card__button__edit'>
-                        <IconEdit/>
-                      </button>
-                      <button className='card__button__edit'>
-                        <IconTrash/>
-                      </button>
+                {
+                  escolaLeft.escola[0] && 
+                  <>
+                    <div className='rigth__content__card__edit'>
+                      <p className='card__text'>
+                        <span>Nome:</span> {escolaLeft.escola[0].nome}
+                      </p>
+                      <div>
+                        <button className='card__button__edit'>
+                          <IconEdit/>
+                        </button>
+                        <button className='card__button__edit'>
+                          <IconTrash/>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div className='card__style__school'>
-                    <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
-                      <p className='card__text'>
-                        <span>Modalidade:</span> {escolaLeft.escola[0].modalidade}
-                      </p>
-                      <p className='card__text'>
-                        <span>N + 1C:</span> {escolaLeft.escola[0].n1}
-                      </p>
-                      {
-                        escolaLeft.aee[0] ?
+                    <div className='card__style__school'>
+                      <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
                         <p className='card__text'>
-                          <span>Turmas AEE:</span> {escolaLeft.aee[0].nTurmas}
+                          <span>Modalidade:</span> {escolaLeft.escola[0].modalidade}
+                        </p>
+                        <p className='card__text'>
+                          <span>N + 1C:</span> {escolaLeft.escola[0].n1}
+                        </p>
+                        {
+                          escolaLeft.aee[0] ?
+                          <p className='card__text'>
+                            <span>Turmas AEE:</span> {escolaLeft.aee[0].nTurmas}
+                          </p>
+                          :
+                          <p className='card__text'>
+                            <span>Turmas AEE:</span> Nenhuma
+                          </p>
+                        }
+                      </span>
+
+                      <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
+
+                      {
+                        escolaLeft.eja[0] ?
+                        <p className='card__text'>
+                          <span>Turmas EJA:</span> {escolaLeft.eja[0].nTurmas}
                         </p>
                         :
                         <p className='card__text'>
-                          <span>Turmas AEE:</span> Nenhuma
+                          <span>Turmas EJA:</span> Nenhuma
                         </p>
                       }
-                    </span>
 
-                    <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
+                      {
+                        escolaLeft.creche[0] ?
+                        <p className='card__text'>
+                          <span>Turmas Creche:</span> {escolaLeft.creche[0].nTurmas}
+                        </p>
+                        :
+                        <p className='card__text'>
+                          <span>Turmas Creche:</span> Nenhuma
+                        </p>
+                      }
+                      {
+                        escolaLeft.pre[0] ?
+                        <p className='card__text'>
+                          <span>Turmas Pré:</span> {escolaLeft.pre[0].nTurmas}
+                        </p>
+                        :
+                        <p className='card__text'>
+                          <span>Turmas Pré:</span> Nenhuma
+                        </p>
+                      }
+                      </span>
 
-                    {
-                      escolaLeft.eja[0] ?
-                      <p className='card__text'>
-                        <span>Turmas EJA:</span> {escolaLeft.eja[0].nTurmas}
-                      </p>
-                      :
-                      <p className='card__text'>
-                        <span>Turmas EJA:</span> Nenhuma
-                      </p>
-                    }
-
-                    {
-                      escolaLeft.creche[0] ?
-                      <p className='card__text'>
-                        <span>Turmas Creche:</span> {escolaLeft.creche[0].nTurmas}
-                      </p>
-                      :
-                      <p className='card__text'>
-                        <span>Turmas Creche:</span> Nenhuma
-                      </p>
-                    }
-                    {
-                      escolaLeft.pre[0] ?
-                      <p className='card__text'>
-                        <span>Turmas Pré:</span> {escolaLeft.pre[0].nTurmas}
-                      </p>
-                      :
-                      <p className='card__text'>
-                        <span>Turmas Pré:</span> Nenhuma
-                      </p>
-                    }
-                    </span>
-
-                    <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
-                    {
-                      escolaLeft.ei[0] ?
-                      <>
-                        <p className='card__text'>
-                          <span>Turmas EI:</span> {escolaLeft.ei[0].nTurmas}
-                        </p>
-                        <p className='card__text'>
-                          <span>N° turmas parciais:</span> {escolaLeft.ei[0].parcial}
-                        </p>
-                        <p className='card__text'>
-                          <span>N° turmas integrais:</span> {escolaLeft.ei[0].integral}
-                        </p>
-                      </>
-                      :
-                      <>
-                        <p className='card__text'>
-                          <span>Turmas EI:</span> Nenhuma
-                        </p>
-                        <p className='card__text'>
-                          <span>N° turmas parciais:</span> Nenhuma
-                        </p>
-                        <p className='card__text'>
-                          <span>N° turmas integrais:</span> Nenhuma
-                        </p>
-                      </>
-                    }
-                    </span>
-                  </div>
+                      <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
+                      {
+                        escolaLeft.ei[0] ?
+                        <>
+                          <p className='card__text'>
+                            <span>Turmas EI:</span> {escolaLeft.ei[0].nTurmas}
+                          </p>
+                          <p className='card__text'>
+                            <span>N° turmas parciais:</span> {escolaLeft.ei[0].parcial}
+                          </p>
+                          <p className='card__text'>
+                            <span>N° turmas integrais:</span> {escolaLeft.ei[0].integral}
+                          </p>
+                        </>
+                        :
+                        <>
+                          <p className='card__text'>
+                            <span>Turmas EI:</span> Nenhuma
+                          </p>
+                          <p className='card__text'>
+                            <span>N° turmas parciais:</span> Nenhuma
+                          </p>
+                          <p className='card__text'>
+                            <span>N° turmas integrais:</span> Nenhuma
+                          </p>
+                        </>
+                      }
+                      </span>
+                    </div>
+                  </>
+                }
                 </>
               }
-              </>
+              </section>
+              :
+              <p style={{textAlign:'center'}}>Selecione uma opção</p>
             }
-            </section>
-            :
-            <p style={{textAlign:'center'}}>Selecione uma opção</p>
-          }
-        </div>
-      </section>
+          </div>
+        </section>
       </section>
       <div className='rigth__side__container'>
         <h2 className='rigth__side__title'>Modalidade Escolar</h2>
@@ -268,7 +269,7 @@ const Escola = () => {
       </section>
       
       {
-        type === ''
+        type === 'Escola'
         &&
         <section className='rigth__side__show'>
         {

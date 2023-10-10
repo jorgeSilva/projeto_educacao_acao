@@ -25,7 +25,8 @@ const Home = () => {
   } = React.useContext(Context)
 
   const {
-    setUrlPadrao
+    setUrlPadrao,
+    setType
   } = React.useContext(buttonContext)
 
   React.useEffect(() => {
@@ -69,7 +70,10 @@ const Home = () => {
                         <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
                           <IconServidores/>
                         </button>
-                        <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola}>
+                        <button onClick={() => {
+                          setBtnHeader('Escola')
+                          setType('Escola')
+                        }} className={style.home__header__icon__escola}>
                           <IconEscola/>
                         </button> 
                       </>)
@@ -87,7 +91,10 @@ const Home = () => {
                         <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
                           <IconServidores/>
                         </button>
-                        <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola}>
+                        <button onClick={() => {
+                          setBtnHeader('Escola')
+                          setType('Escola')
+                        }} className={style.home__header__icon__escola}>
                           <IconEscola/>
                         </button> 
                       </>)
@@ -104,7 +111,10 @@ const Home = () => {
                           <IconServidores/>
                           <p>Servidores</p>
                         </button>
-                        <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola}>
+                        <button onClick={() => {
+                          setBtnHeader('Escola')
+                          setType('Escola')
+                        }} className={style.home__header__icon__escola}>
                           <IconEscola/>
                         </button> 
                       </>)
@@ -119,7 +129,10 @@ const Home = () => {
                         <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
                           <IconServidores/>
                         </button>
-                        <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola__active}>
+                        <button onClick={() => {
+                          setBtnHeader('Escola')
+                          setType('Escola')
+                        }} className={style.home__header__icon__escola__active}>
                           <IconEscola/>
                           <p>Escola</p>
                         </button> 
@@ -147,7 +160,10 @@ const Home = () => {
                   <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
                     <IconServidores/>
                   </button>
-                  <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola}>
+                  <button onClick={() => {
+                    setBtnHeader('Escola')
+                    setType('Escola')
+                  }} className={style.home__header__icon__escola}>
                     <IconEscola/>
                   </button> 
                 </>)
@@ -165,7 +181,10 @@ const Home = () => {
                   <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
                     <IconServidores/>
                   </button>
-                  <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola}>
+                  <button onClick={() => {
+                    setBtnHeader('Escola')
+                    setType('Escola')
+                  }} className={style.home__header__icon__escola}>
                     <IconEscola/>
                   </button> 
                 </>)
@@ -182,7 +201,10 @@ const Home = () => {
                     <IconServidores/>
                     <p>Servidores</p>
                   </button>
-                  <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola}>
+                  <button onClick={() => {
+                    setBtnHeader('Escola')
+                    setType('Escola')
+                  }} className={style.home__header__icon__escola}>
                     <IconEscola/>
                   </button> 
                 </>)
@@ -197,7 +219,10 @@ const Home = () => {
                   <button onClick={() => setBtnHeader('Servidores')} className={style.home__header__icon__serv}>
                     <IconServidores/>
                   </button>
-                  <button onClick={() => setBtnHeader('Escola')} className={style.home__header__icon__escola__active}>
+                  <button onClick={() => {
+                    setBtnHeader('Escola')
+                    setType('Escola')
+                  }} className={style.home__header__icon__escola__active}>
                     <IconEscola/>
                     <p>Escola</p>
                   </button> 

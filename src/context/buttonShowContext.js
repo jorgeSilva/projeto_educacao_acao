@@ -12,15 +12,14 @@ function ButtonShowProvider({children}){
   const [type, setType] = React.useState('')
 
   async function handleGet(e){
-    console.log(e);
     if(e){
       setLoading(true)
       await api.get(`${e}`)
       .then(({data}) => {
         setData('')
+        setEscola('')
         setData(data)
         setEscola(data)
-        console.log(data);
         setLoading(false)
       }).catch(e => {
         console.log(e)
@@ -33,6 +32,8 @@ function ButtonShowProvider({children}){
     setLoading(true)
     await api.get(`/${urlPadrao.toLocaleLowerCase()}/show`)
     .then(({data}) => {
+      setData('')
+      setEscola('')
       setData(data)
       if(data[0].fkescola){
         setEscola(data);
@@ -43,6 +44,8 @@ function ButtonShowProvider({children}){
       setLoading(false)
     })
   }
+
+  console.log(type);
 
   React.useEffect(() => {
     handlePadrao()
@@ -55,6 +58,7 @@ function ButtonShowProvider({children}){
         setUrl,
         setUrlPadrao,
         handleGet,
+        handlePadrao,
         type,
         loading,
         escola,
