@@ -9,6 +9,9 @@ function ButtonLeftShowProvider({children}){
   const [loadingLeft, setLoadingLeft] = React.useState('')
   const [escolaLeft, setEscolaLeft] = React.useState('')
   const [type, setType] = React.useState('')
+  const [date, setDate] = React.useState('')
+  const [valuePMI, setValuePMI] = React.useState('')
+  const [valueSEE, setValueSEE] = React.useState('')
 
   async function handleGet(e, select){
     if(select === 'escola'){
@@ -31,9 +34,24 @@ function ButtonLeftShowProvider({children}){
         // console.log(e)
         setLoadingLeft(false)
       })
+    }else if(select === 'convenio'){
+      await api.get(`/${String(e)}`)
+      .then(({data}) => {
+        setDataLeft('')
+        setDataLeft(data)
+        // let arrDate = data.map(({date}) => ({date}))
+
+        // console.log(arrDate);
+        setDate(data.map(({date}) => ({date})))
+        setValuePMI(data.map(({pmi}) => ({pmi})))
+        setValueSEE(data.map(({see}) => ({see})))
+        setLoadingLeft(false)
+      }).catch(e => {
+        // console.log(e)
+        setLoadingLeft(false)
+      })
     }
   }
-  
 
   return(
     <buttonLetContext.Provider value={
@@ -46,7 +64,10 @@ function ButtonLeftShowProvider({children}){
         type,
         loadingLeft,
         escolaLeft,
-        dataLeft
+        dataLeft,
+        date,
+        valuePMI,
+        valueSEE
       }
     }>
       {children}

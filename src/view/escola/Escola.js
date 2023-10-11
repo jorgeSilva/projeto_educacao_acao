@@ -88,7 +88,7 @@ const Escola = () => {
                 select: 'escola'
               },
               {
-                text: 'EE Jardim Santa Inês',
+                text: 'CMEI Santa Inês',
                 url: 'jardim/show',
                 select: 'escola'
               }

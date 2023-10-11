@@ -182,13 +182,31 @@ const Modal = ({content}) => {
                           required 
                           type='text' 
                           value={input0} 
-                          placeholder='Transporte'/>
+                          placeholder='Convenio'/>
 
                         <input 
                           onChange={handleInput1}
-                          type='text' 
+                          type='number' 
                           value={input1} 
-                          placeholder='Merenda'/>
+                          placeholder='PMI'/>
+
+                        <input 
+                          onChange={handleInput2}
+                          type='number' 
+                          value={input2} 
+                          placeholder='SEE'/>
+
+                        <input 
+                          onChange={handleInput3}
+                          type='number' 
+                          value={input3} 
+                          placeholder='Contrapartida'/>
+
+                        <input 
+                          onChange={handleInput4}
+                          type='date' 
+                          value={input4} 
+                          placeholder='01/01/2000'/>
 
                         <button 
                           className={style.login__button__loading} onClick={(e) => {
@@ -203,15 +221,33 @@ const Modal = ({content}) => {
                         <input 
                           onChange={handleInput0} 
                           required 
-                          type='number' 
+                          type='text' 
                           value={input0} 
-                          placeholder='Transporte'/>
+                          placeholder='Convenio'/>
 
                         <input 
                           onChange={handleInput1}
                           type='number' 
                           value={input1} 
-                          placeholder='Merenda'/>
+                          placeholder='PMI'/>
+
+                        <input 
+                          onChange={handleInput2}
+                          type='number' 
+                          value={input2} 
+                          placeholder='SEE'/>
+
+                        <input 
+                          onChange={handleInput3}
+                          type='number' 
+                          value={input3} 
+                          placeholder='Contrapartida'/>
+
+                        <input 
+                          onChange={handleInput4}
+                          type='date' 
+                          value={input4} 
+                          placeholder='01/01/2000'/>
 
                         <button onClick={handleSubmit}>Cadastrar</button>
                       </>

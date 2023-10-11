@@ -104,8 +104,11 @@ function CadProvider({children}){
     }else if(type === 'convenio'){
       setLoading(true)
       await api.post(`${type}`, {
-        transporte: input0,
-        merenda: input1
+        convenio: input0,
+        pmi: input1,
+        see: input2,
+        contraPartida: input3,
+        date: input4
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)

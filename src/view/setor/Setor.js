@@ -7,10 +7,16 @@ import { buttonContext } from '../../context/buttonShowContext'
 import { ReactComponent as IconEdit } from '../../assets/Home/canetaEdicao.svg'
 import { ReactComponent as IconTrash } from '../../assets/Home/trash3-fill.svg'
 import ButtonsLeftOption from '../../utils/buttonsLeftOptions/ButtonsLeftOption'
-import ApexChart from '../../utils/grafico/ApexChart'
 import Chart from '../../utils/grafico/ApexChart'
+import { buttonLetContext } from '../../context/buttonsLeftShowContext'
 
 const Setor = () => {
+  const {
+    dataLeft,
+    date,
+    valuePMI,
+    valueSEE
+  } = React.useContext(buttonLetContext)
 
   const {
     data,
@@ -35,9 +41,28 @@ const Setor = () => {
         }/>
 
       <section className='left__side__container__show'>
-        <h2 className='rigth__side__title'>Convenio</h2>
+        <h2 className='rigth__side__title'>Convênio</h2>
+        <section className='left__side__content'>
+          <ButtonsLeftOption content={[
+            {
+              text: 'Merenda',
+              url: 'merenda/show',
+              select: 'convenio'
+            },
+            {
+              text: 'Transporte',
+              url: 'transporte/show',
+              select: 'convenio'
+            }
+          ]}/>
+        </section>
         <div className='left__side__show__convenio'>
-          <Chart/>
+          {
+            dataLeft ? 
+            <Chart date={date} valuePMI={valuePMI} valueSEE={valueSEE}/>
+            :
+            <p style={{textAlign:'center'}}>Selecione um campo para exibir o grafico</p>
+          }
         </div>
       </section>
       </section>
