@@ -1,0 +1,169 @@
+.modal__container{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(73, 73, 73, 0.822);
+  backdrop-filter: blur(2px);
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 12;  
+}
+
+.modal__content__button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.modal__button__close{
+  background-color: var(--c0);
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 56px;
+  cursor: pointer;
+  animation: fade-up .3s forwards;
+}
+
+.modal__button__close svg{
+  fill: var(--c12);
+}
+
+.modal__content__form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ----------- content modal ------------------- */
+
+.login__body{
+  display: flex;
+  align-items: center;
+}
+
+.login__content{
+  height: 100%;
+  display: grid;
+  transition: .3s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  animation: fade-left .3s forwards;
+  padding: 1rem;
+}
+
+.login__rigth__side{
+  background: 
+    url("../../assets/Login/backgroundSVG.svg")
+    no-repeat
+    center
+    top
+    var(--c1);
+  border-radius: 20px;
+  transition: .3s ease;
+  padding: 1rem;
+}
+
+.login__rigth__side__h1{
+  font-size: 2rem;
+  font-family: 'DM Serif Display', serif;
+  color: var(--c12);
+  line-height: 1;
+  font-weight: 400;
+  transition: .2s ease;
+}
+
+.login__text__aux{
+  font-size: 1rem;
+  color: var(--c12);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  padding-top: 1rem;
+}
+
+.login__rigth__side__h2{
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.25rem;
+  color: var(--c12);
+  letter-spacing: 2px;
+  line-height: 1.1;
+  padding-top: 5rem;
+  font-weight: 400;
+}
+
+.login__form{
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form input,
+.login__form select{
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--c7);
+  background-color: var(--c3);
+  transition: .3s ease;
+}
+
+.login__form input:focus,
+.login__form select:focus{
+  outline: none;
+  border: 1px solid var(--c8);
+}
+
+.login__form button{
+  width: 100%;
+  font-family: 'Raleway', sans-serif; 
+  font-weight: 600;
+  font-size: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 1px solid var(--c7);
+  background-color: var(--p3);
+  color: var(--c1);
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.login__button__loading{
+  opacity: .6;
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.9);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.9);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

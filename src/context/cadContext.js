@@ -71,8 +71,6 @@ function CadProvider({children}){
     setSelected(String(s._id));
   }
 
-  console.log(selected);
-
   async function handleSubmit(e){
     e.preventDefault()
 
@@ -362,6 +360,37 @@ function CadProvider({children}){
     }
   }
 
+  async function handleEdit(e){
+    e.preventDefault()
+    
+    if(type === 'setor'){
+      setLoading(true)
+      await api.put(`${type}/dados/${selected}`, {
+        nome: input0,
+        setor: input1,
+        obs: input2
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }
+  }
+
   React.useEffect(() => {
     schoolsGet()
   }, [])
@@ -393,8 +422,10 @@ function CadProvider({children}){
         success, 
         error,
         loading, 
-        handleSubmit, 
+        handleSubmit,
+        handleEdit, 
         setType,
+        setLoading,
         setSuccess,
         setError,
         setInput0,

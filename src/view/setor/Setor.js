@@ -1,7 +1,6 @@
 import React from 'react'
 import Horario from '../../utils/horario/Horario'
 import Cadastro from '../../utils/cadastro/Cadastro'
-// import api from '../../services/api'
 import ButtonsOptions from '../../utils/buttonsOptions/ButtonsOptions'
 import { buttonContext } from '../../context/buttonShowContext'
 import { ReactComponent as IconEdit } from '../../assets/Home/canetaEdicao.svg'
@@ -9,6 +8,8 @@ import { ReactComponent as IconTrash } from '../../assets/Home/trash3-fill.svg'
 import ButtonsLeftOption from '../../utils/buttonsLeftOptions/ButtonsLeftOption'
 import Chart from '../../utils/grafico/ApexChart'
 import { buttonLetContext } from '../../context/buttonsLeftShowContext'
+import api from '../../services/api'
+import ModalUpdate from '../../utils/modalUpdate/ModalUpdate'
 
 const Setor = () => {
   const {
@@ -22,6 +23,11 @@ const Setor = () => {
     data,
     loading
   } = React.useContext(buttonContext)
+
+  const [active, setActive] = React.useState(false)
+  const [stop, setStop] = React.useState('')
+
+  console.log(active);
 
   return (
     <article className='container'>
@@ -105,34 +111,42 @@ const Setor = () => {
         <section className='rigth__side__show'>
           {
             data ? data.map((item) => (
-              <section className='rigth__side__card' key={item._id}>
-                {
-                   loading ?
-                   <span className="loader-"></span>
-                   :
-                   <>
-                     <div className='rigth__content__card__edit'>
-                      <p className='card__text'>
-                        <span>Nome:</span> {item.nome}
-                      </p>
-                      <div>
-                        <button className='card__button__edit'>
-                          <IconEdit/>
-                        </button>
-                        <button className='card__button__edit'>
-                          <IconTrash/>
-                        </button>
+              <>
+                <section className='rigth__side__card' key={item._id}>
+                  {
+                    loading ?
+                    <span className="loader-"></span>
+                    :
+                    <>
+                      <div className='rigth__content__card__edit'>
+                        <p className='card__text'>
+                          <span>Nome:</span> {item.nome}
+                        </p>
+                        <div>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive(!active)
+                            setStop(item._id)
+                          }}>
+                            <IconEdit/>
+                          </button>
+                          <button className='card__button__edit'>
+                            <IconTrash/>
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                    <p className='card__text'>
-                      <span>Setor:</span> {item.setor}
-                    </p>
-                    <p className='card__text'>
-                      <span>Obs:</span> {item.obs}
-                    </p>
-                   </>
+                      <p className='card__text'>
+                        <span>Setor:</span> {item.setor}
+                      </p>
+                      <p className='card__text'>
+                        <span>Obs:</span> {item.obs}
+                      </p>
+                    </>
+                  }
+                </section>
+                {
+                  active && stop === item._id && <ModalUpdate content={{item, type:'setor', setActive}}/>
                 }
-              </section>
+              </>
             )) 
             :
             <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
