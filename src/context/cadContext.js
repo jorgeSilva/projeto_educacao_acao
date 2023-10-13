@@ -388,6 +388,33 @@ function CadProvider({children}){
         setInput9('')
         setSelected('')
       })
+    }else if(type === 'convenio'){
+      setLoading(true)
+      await api.put(`${type}/update/${selected}`, {
+        convenio: input0,
+        pmi: input1,
+        see: input2,
+        contraPartida: input3,
+        date: input4
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
     }
   }
 

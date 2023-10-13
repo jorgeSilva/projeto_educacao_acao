@@ -133,6 +133,111 @@ const ModalUpdate = ({content}) => {
             </main>
           </section>
         )
+
+        ||
+
+        (
+          content.type && content.type === 'convenio'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere as informações do convênio
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.convenio}`}/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='text' 
+                          value={input1} 
+                          placeholder={`${content.item.pmi}`}/>
+
+                        <input
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder={`${content.item.see}`}/>
+                        
+                        <input
+                          onChange={handleInput3}
+                          type='text' 
+                          value={input3} 
+                          placeholder={`${content.item.contraPartida}`}/>
+
+                        <input
+                          onChange={handleInput4}
+                          type='date' 
+                          value={input4} 
+                          placeholder={`${content.item.date}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.convenio}`}/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='text' 
+                          value={input1} 
+                          placeholder={`${content.item.pmi}`}/>
+
+                        <input
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder={`${content.item.see}`}/>
+                        
+                        <input
+                          onChange={handleInput3}
+                          type='text' 
+                          value={input3} 
+                          placeholder={`${content.item.contraPartida}`}/>
+
+                        <input
+                          onChange={handleInput4}
+                          type='date' 
+                          value={input4} 
+                          placeholder={`${content.item.date}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
       }
       {
         success && <Success content={success}/>

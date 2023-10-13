@@ -9,7 +9,7 @@ const ButtonsOptions = ({content}) => {
     setType,
     handleGet
   } = React.useContext(buttonContext)
-
+  
   return (
     content && content.map((item) => (
       <>

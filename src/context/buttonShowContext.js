@@ -22,7 +22,6 @@ function ButtonShowProvider({children}){
         setEscola(data)
         setLoading(false)
       }).catch(e => {
-        console.log(e)
         setLoading(false)
       })
     }
@@ -40,12 +39,9 @@ function ButtonShowProvider({children}){
       }
       setLoading(false)
     }).catch(e => {
-      console.log(e);
       setLoading(false)
     })
   }
-
-  console.log(type);
 
   React.useEffect(() => {
     handlePadrao()

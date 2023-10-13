@@ -49,8 +49,6 @@ export default function Chart({valuePMI, valueSEE, date}) {
     }
   ]
 
-  console.log(valuePMI);
-
   return (
     <ApexCharts
       options={options}
