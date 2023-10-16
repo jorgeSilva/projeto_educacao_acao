@@ -45,31 +45,32 @@ const Setor = () => {
           ]
         }/>
 
-      <section className='left__side__container__show'>
-        <h2 className='rigth__side__title'>Convênio</h2>
-        <section className='left__side__content'>
-          <ButtonsLeftOption content={[
+        <section className='left__side__container__show'>
+          <h2 className='rigth__side__title'>Convênio</h2>
+          <section className='left__side__content'>
+            <ButtonsLeftOption content={[
+              {
+                text: 'Merenda',
+                url: 'convenio/merenda/show',
+                select: 'convenio'
+              },
+              {
+                text: 'Transporte',
+                url: 'convenio/transporte/show',
+                select: 'convenio'
+              }
+            ]}/>
+          </section>
+          
+          <div className='left__side__show__convenio'>
             {
-              text: 'Merenda',
-              url: 'convenio/merenda/show',
-              select: 'convenio'
-            },
-            {
-              text: 'Transporte',
-              url: 'convenio/transporte/show',
-              select: 'convenio'
+              dataLeft ? 
+              <Chart date={date} valuePMI={valuePMI} valueSEE={valueSEE}/>
+              :
+              <p style={{textAlign:'center'}}>Selecione um campo para exibir o grafico</p>
             }
-          ]}/>
+          </div>
         </section>
-        <div className='left__side__show__convenio'>
-          {
-            dataLeft ? 
-            <Chart date={date} valuePMI={valuePMI} valueSEE={valueSEE}/>
-            :
-            <p style={{textAlign:'center'}}>Selecione um campo para exibir o grafico</p>
-          }
-        </div>
-      </section>
       </section>
       <article className='rigth__side__container'>
         <h2 className='rigth__side__title'>Funcionários e Convênio</h2>

@@ -19,6 +19,7 @@ function CadProvider({children}){
   const [loading, setLoading] = React.useState('')
   const [type, setType] = React.useState('')
   const [selected, setSelected] = React.useState('')
+  const [selectUser, setSelectUser] = React.useState('')
 
   const handleInput0 = (e) =>{
     setInput0(e.target.value)
@@ -365,7 +366,7 @@ function CadProvider({children}){
     
     if(type === 'setor'){
       setLoading(true)
-      await api.put(`${type}/dados/${selected}`, {
+      await api.put(`${type}/dados/${selectUser}`, {
         nome: input0,
         setor: input1,
         obs: input2
@@ -390,7 +391,7 @@ function CadProvider({children}){
       })
     }else if(type === 'convenio'){
       setLoading(true)
-      await api.put(`${type}/update/${selected}`, {
+      await api.put(`${type}/update/${selectUser}`, {
         convenio: input0,
         pmi: input1,
         see: input2,
@@ -398,6 +399,32 @@ function CadProvider({children}){
         date: input4
       }).then(({data}) => {
         setSuccess(data.msg)
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'professores'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        nome: input0,
+        funcao: input1,
+        fkescola: selected,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
         setLoading(false)
       }).catch(e => {
         setError(e.response.data.error);
@@ -449,6 +476,7 @@ function CadProvider({children}){
         success, 
         error,
         loading, 
+        setSelectUser,
         handleSubmit,
         handleEdit, 
         setType,
