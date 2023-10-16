@@ -145,12 +145,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  top: 30%;
+  top: 35%;
 }
 
-@media (max-width: 1525px) {
+@media (max-width: 1453px) {
   .rigth__side__show{
-    top: 35%;
+    top: 40%;
   }
 }
 
@@ -172,21 +172,21 @@
   }
 }
 
-@media (max-width: 469px) {
+@media (max-width: 506px) {
   .rigth__side__show{
     top: 35%;
   }
 }
 
-@media (max-width: 364px) {
+@media (max-width: 469px) {
   .rigth__side__show{
-    top: 45%;
+    top: 40%;
   }
 }
 
-@media (max-width: 333px) {
+@media (max-width: 374px) {
   .rigth__side__show{
-    top: 50%;
+    top: 45%;
   }
 }
 
