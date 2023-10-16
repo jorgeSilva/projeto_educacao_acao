@@ -255,7 +255,7 @@
 
 .card__button__edit{
   background-color: var(--c8);
-  padding: 1rem;
+  padding: .5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,6 +273,8 @@
 
 .card__button__edit svg{
   fill: var(--c12);
+  width: 12px;
+  height: 12px;
 }
 
 .card__button__edit:hover{
@@ -286,8 +288,8 @@
 
 .rigth__side__card{
   background-color: var(--c7);
-  padding: 2rem;
-  border-radius: 40px;
+  padding: 1.5rem 1rem;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -295,6 +297,18 @@
   animation: fade-left .3s ;
   position: relative;
 }
+
+@media (max-width: 515px) {
+  .rigth__side__card{
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .card__button__edit{
+    padding: .5rem;
+  }
+}
+
 
 .card__text{
   font-family: 'Inter', sans-serif;
