@@ -185,7 +185,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 40 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 40 horas', name: 'professor'}}/>
                           }
                         </>
                         :
@@ -244,7 +244,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor readaptado de 40h', name: 'professor readaptado'}}/>
                           }
                         </>
                         :
@@ -303,7 +303,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor afastado de 40 horas', name: 'professor afastado'}}/>
                           }
                         </>
                         :
@@ -362,7 +362,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'professor'}}/>
                           }
                         </>
                         :
@@ -421,7 +421,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor readaptado de 25 horas', name: 'professor readaptado'}}/>
                           }
                         </>
                         :
@@ -480,7 +480,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor afastado de 25 horas', name: 'professor afastado'}}/>
                           }
                         </>
                         :
@@ -526,7 +526,7 @@ const Servidores = () => {
             )
             ||
             (
-              type === 'Professor Contratado'
+              type === 'Professor contratado'
               &&
               <>
                 {
@@ -539,7 +539,7 @@ const Servidores = () => {
                             active === 'update'?
                             <ModalUpdate content={{item, type:'professores', setActive}}/>
                             :
-                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor de 25 horas', name: 'Merenda'}}/>
+                            <ModalDelete content={{item, type:'professores', setActive, h1: 'Exclua o registro do professor contratado', name: 'professor contratado'}}/>
                           }
                         </>
                         :
