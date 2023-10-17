@@ -332,6 +332,12 @@
   }
 }
 
+@media (max-width: 870px) {
+  .card__style__school{
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 733px) {
   .rigth__side__container{
     margin-top: 2rem;
