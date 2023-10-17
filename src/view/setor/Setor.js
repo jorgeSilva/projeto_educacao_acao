@@ -72,6 +72,7 @@ const Setor = () => {
           </div>
         </section>
       </section>
+      
       <article className='rigth__side__container'>
         <h2 className='rigth__side__title'>Funcionários e Convênio</h2>
 
