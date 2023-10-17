@@ -476,6 +476,128 @@ function CadProvider({children}){
         setInput9('')
         setSelected('')
       })
+    }else if(type === '0a3anos'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        alunos0a3: input0,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'alunos4'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        alunos4: input0,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'alunos5'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        alunos5: input0,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'educacao-infantil'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        nTurmas: input0,
+        parcial: input1,
+        integral: input2,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'escolaN1C'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        n1: input0,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
     }
   }
 

@@ -46,6 +46,8 @@ const ModalUpdate = ({content}) => {
     setType(content.type)
   }, [input0, input1, input2, input3, input4, input5, input6, input7, input8])
 
+  console.log(content.item);
+
   return (
     <article className={style.modal__container}>
       <section className={style.modal__content__button}>
@@ -427,6 +429,319 @@ const ModalUpdate = ({content}) => {
                             <option>Ainda não tem escolas</option>
                           }
                         </select>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === '0a3anos'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos 0 à 3 anos
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.alunos0a3}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.alunos0a3}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'alunos4'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de 4 anos
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.alunos4}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.alunos4}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'alunos5'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de 5 anos
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.alunos5}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.alunos5}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'educacao-infantil'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de 5 anos
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+                        
+                        <input 
+                          onChange={handleInput1} 
+                          required 
+                          type='text' 
+                          value={input1} 
+                          placeholder={`${content.item.parcial}`}/>
+
+                        <input 
+                          onChange={handleInput2} 
+                          required 
+                          type='text' 
+                          value={input2} 
+                          placeholder={`${content.item.integral}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+                        
+                        <input 
+                          onChange={handleInput1} 
+                          required 
+                          type='text' 
+                          value={input1} 
+                          placeholder={`${content.item.parcial}`}/>
+
+                        <input 
+                          onChange={handleInput2} 
+                          required 
+                          type='text' 
+                          value={input2} 
+                          placeholder={`${content.item.integral}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'escolaN1C'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de determinada escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.n1}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.n1}`}/>
 
                         <button onClick={handleEdit}>Editar</button>
                       </>

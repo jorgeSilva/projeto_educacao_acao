@@ -7,6 +7,8 @@ import { ReactComponent as IconEdit } from '../../assets/Home/canetaEdicao.svg'
 import { ReactComponent as IconTrash } from '../../assets/Home/trash3-fill.svg' 
 import { buttonLetContext } from '../../context/buttonsLeftShowContext'
 import ButtonsLeftOption from '../../utils/buttonsLeftOptions/ButtonsLeftOption'
+import ModalUpdate from '../../utils/modalUpdate/ModalUpdate'
+import ModalDelete from '../../utils/modalDelete/ModalDelete'
 
 const Escola = () => {
   const {
@@ -20,6 +22,9 @@ const Escola = () => {
     escolaLeft,
     loadingLeft
   } = React.useContext(buttonLetContext)
+
+  const [active, setActive] = React.useState(false)
+  const [stop, setStop] = React.useState('')
 
   return (
     <article className='container'>
@@ -340,27 +345,47 @@ const Escola = () => {
           escola && escola.map((item) => (
             <section className='rigth__side__card' key={item._id}>
               {
-                loading ?
-                <span className="loader-"></span>
+                active && stop === item._id ?
+                <>
+                  {
+                    active === 'update'?
+                    <ModalUpdate content={{item, type:'0a3anos', setActive}}/>
+                    :
+                    <ModalDelete content={{item, type:'0a3anos', setActive, h1: 'Zere a quantidade de alunos de 0 à 3 anos', name: ''}}/>
+                  }
+                </>
                 :
                 <>
-                  <div className='rigth__content__card__edit'>
-                    <p className='card__text'>
-                      <span>Escola:</span> {item.fkescola.nome}
-                    </p>
-                    
-                    <div>
-                      <button className='card__button__edit'>
-                        <IconEdit/>
-                      </button>
-                      <button className='card__button__edit'>
-                        <IconTrash/>
-                      </button>
-                    </div>
-                  </div>
-                  <p className='card__text'>
-                    <span>N° alunos de 0 à 3 anos:</span> {item.alunos0a3}
-                  </p> 
+                  {
+                    loading ?
+                    <span className="loader-"></span>
+                    :
+                    <>
+                      <div className='rigth__content__card__edit'>
+                        <p className='card__text'>
+                          <span>Escola:</span> {item.fkescola.nome}
+                        </p>
+                        
+                        <div>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('update')
+                            setStop(item._id)
+                          }}>
+                            <IconEdit/>
+                          </button>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('delete')
+                            setStop(item._id)
+                          }}>
+                            <IconTrash/>
+                          </button>
+                        </div>
+                      </div>
+                      <p className='card__text'>
+                        <span>N° alunos de 0 à 3 anos:</span> {item.alunos0a3}
+                      </p> 
+                    </>
+                  }
                 </>
               }
             </section>
@@ -377,27 +402,53 @@ const Escola = () => {
           escola && escola.map((item) => (
             <section className='rigth__side__card' key={item._id}>
               {
-                loading ?
-                <span className="loader-"></span>
+                active && stop === item._id ?
+                <>
+                  {
+                    active === 'update'?
+                    <ModalUpdate content={{item, type:'educacao-infantil', setActive}}/>
+                    :
+                    <ModalDelete content={{item, type:'educacao-infantil', setActive, h1: 'Exclua o registro do professor readaptado de 40h', name: 'professor readaptado'}}/>
+                  }
+                </>
                 :
                 <>
-                  <div className='rigth__content__card__edit'>
-                    <p className='card__text'>
-                      <span>N° de turmas:</span> {item.nTurmas}
-                    </p>
-                    
-                    <div>
-                      <button className='card__button__edit'>
-                        <IconEdit/>
-                      </button>
-                      <button className='card__button__edit'>
-                        <IconTrash/>
-                      </button>
-                    </div>
-                  </div>
-                  <p className='card__text'>
-                    <span>Escola:</span> {item.fkescola.nome}
-                  </p>  
+                   {
+                    loading ?
+                    <span className="loader-"></span>
+                    :
+                    <>
+                      <div className='rigth__content__card__edit'>
+                        <p className='card__text'>
+                          <span>Escola:</span> {item.fkescola.nome}
+                        </p>
+                        
+                        <div>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('update')
+                            setStop(item._id)
+                          }}>
+                            <IconEdit/>
+                          </button>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('delete')
+                            setStop(item._id)
+                          }}>
+                            <IconTrash/>
+                          </button>
+                        </div>
+                      </div>
+                      <p className='card__text'>
+                        <span>N° de turmas:</span> {item.nTurmas}
+                      </p>  
+                      <p className='card__text'>
+                        <span>N° de turmas parcial:</span> {item.parcial}
+                      </p>  
+                      <p className='card__text'>
+                        <span>N° de turmas integral:</span> {item.integral}
+                      </p>  
+                    </>
+                  }
                 </>
               }
             </section>
@@ -487,28 +538,48 @@ const Escola = () => {
         {
           escola && escola.map((item) => (
             <section className='rigth__side__card' key={item._id}>
-              {
-                loading ?
-                <span className="loader-"></span>
+               {
+                active && stop === item._id ?
+                <>
+                  {
+                    active === 'update'?
+                    <ModalUpdate content={{item, type:'alunos4', setActive}}/>
+                    :
+                    <ModalDelete content={{item, type:'alunos4', setActive, h1: 'Zere a quantidade de alunos de 0 à 3 anos', name: ''}}/>
+                  }
+                </>
                 :
                 <>
-                  <div className='rigth__content__card__edit'>
-                    <p className='card__text'>
-                      <span>Escola:</span> {item.fkescola.nome}
-                    </p>
-                    
-                    <div>
-                      <button className='card__button__edit'>
-                        <IconEdit/>
-                      </button>
-                      <button className='card__button__edit'>
-                        <IconTrash/>
-                      </button>
-                    </div>
-                  </div>
-                  <p className='card__text'>
-                    <span>N° alunos com 4 anos:</span> {item.alunos4}
-                  </p> 
+                  {
+                    loading ?
+                    <span className="loader-"></span>
+                    :
+                    <>
+                      <div className='rigth__content__card__edit'>
+                        <p className='card__text'>
+                          <span>Escola:</span> {item.fkescola.nome}
+                        </p>
+                        
+                        <div>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('update')
+                            setStop(item._id)
+                          }}>
+                            <IconEdit/>
+                          </button>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('delete')
+                            setStop(item._id)
+                          }}>
+                            <IconTrash/>
+                          </button>
+                        </div>
+                      </div>
+                      <p className='card__text'>
+                        <span>N° alunos com 4 anos:</span> {item.alunos4}
+                      </p> 
+                    </>
+                  }
                 </>
               }
             </section>
@@ -525,27 +596,47 @@ const Escola = () => {
           escola && escola.map((item) => (
             <section className='rigth__side__card' key={item._id}>
               {
-                loading ?
-                <span className="loader-"></span>
+                active && stop === item._id ?
+                <>
+                  {
+                    active === 'update'?
+                    <ModalUpdate content={{item, type:'alunos5', setActive}}/>
+                    :
+                    <ModalDelete content={{item, type:'alunos5', setActive, h1: 'Zere a quantidade de alunos de 5 anos', name: ''}}/>
+                  }
+                </>
                 :
                 <>
-                  <div className='rigth__content__card__edit'>
-                    <p className='card__text'>
-                      <span>Escola:</span> {item.fkescola.nome}
-                    </p>
-                    
-                    <div>
-                      <button className='card__button__edit'>
-                        <IconEdit/>
-                      </button>
-                      <button className='card__button__edit'>
-                        <IconTrash/>
-                      </button>
-                    </div>
-                  </div>
-                  <p className='card__text'>
-                    <span>N° alunos com 5 anos:</span> {item.alunos5}
-                  </p> 
+                  {
+                    loading ?
+                    <span className="loader-"></span>
+                    :
+                    <>
+                      <div className='rigth__content__card__edit'>
+                        <p className='card__text'>
+                          <span>Escola:</span> {item.fkescola.nome}
+                        </p>
+                        
+                        <div>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('update')
+                            setStop(item._id)
+                          }}>
+                            <IconEdit/>
+                          </button>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('delete')
+                            setStop(item._id)
+                          }}>
+                            <IconTrash/>
+                          </button>
+                        </div>
+                      </div>
+                      <p className='card__text'>
+                        <span>N° alunos com 5 anos:</span> {item.alunos5}
+                      </p> 
+                    </>
+                  }
                 </>
               }
             </section>
@@ -636,30 +727,50 @@ const Escola = () => {
           data && data.map((item) => (
             <section className='rigth__side__card' key={item._id}>
               {
-                loading ?
-                <span className="loader-"></span>
+                active && stop === item._id ?
+                <>
+                  {
+                    active === 'update'?
+                    <ModalUpdate content={{item, type:'escolaN1C', setActive}}/>
+                    :
+                    <ModalDelete content={{item, type:'escolaN1C', setActive, h1: 'Zere a quantia de alunos', name: ''}}/>
+                  }
+                </>
                 :
                 <>
-                  <div className='rigth__content__card__edit'>
-                    <p className='card__text'>
-                      <span>Nome escola:</span> {item.nome}
-                    </p>
-                    
-                    <div>
-                      <button className='card__button__edit'>
-                        <IconEdit/>
-                      </button>
-                      <button className='card__button__edit'>
-                        <IconTrash/>
-                      </button>
-                    </div>
-                  </div>
-                  <p className='card__text'>
-                    <span>Modalidade escola: </span> {item.modalidade}
-                  </p>
-                  <p className='card__text'>
-                    <span>Nasceu + 1 cidadão: </span> {item.n1}
-                  </p>
+                  {
+                    loading ?
+                    <span className="loader-"></span>
+                    :
+                    <>
+                      <div className='rigth__content__card__edit'>
+                        <p className='card__text'>
+                          <span>Nome escola:</span> {item.nome}
+                        </p>
+                        
+                        <div>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('update')
+                            setStop(item._id)
+                          }}>
+                            <IconEdit/>
+                          </button>
+                          <button className='card__button__edit' onClick={() => {
+                            setActive('delete')
+                            setStop(item._id)
+                          }}>
+                            <IconTrash/>
+                          </button>
+                        </div>
+                      </div>
+                      <p className='card__text'>
+                        <span>Modalidade escola: </span> {item.modalidade}
+                      </p>
+                      <p className='card__text'>
+                        <span>Nasceu + 1 cidadão: </span> {item.n1}
+                      </p>
+                    </>
+                  }
                 </>
               }
             </section>
