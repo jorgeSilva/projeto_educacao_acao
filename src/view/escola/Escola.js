@@ -139,6 +139,16 @@ const Escola = () => {
                             <span>Turmas AEE:</span> Nenhuma
                           </p>
                         }
+                        {
+                          escolaLeft.ei[0] ?
+                          <p className='card__text'>
+                            <span>N° alunos de 0 à 3 anos:</span> {escolaLeft.ei[0].alunos0a3}
+                          </p>
+                          :
+                          <p className='card__text'>
+                            <span>N° alunos de 0 à 3 anos:</span> 0
+                          </p>
+                        }
                       </span>
 
                       <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
@@ -174,6 +184,16 @@ const Escola = () => {
                           <span>Turmas Pré:</span> Nenhuma
                         </p>
                       }
+                      {
+                          escolaLeft.ei[0] ?
+                          <p className='card__text'>
+                            <span>N° alunos de 4 anos:</span> {escolaLeft.ei[0].alunos4}
+                          </p>
+                          :
+                          <p className='card__text'>
+                            <span>N° alunos de 4 anos:</span> 0
+                          </p>
+                        }
                       </span>
 
                       <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
@@ -189,6 +209,9 @@ const Escola = () => {
                           <p className='card__text'>
                             <span>N° turmas integrais:</span> {escolaLeft.ei[0].integral}
                           </p>
+                          <p className='card__text'>
+                            <span>N° alunos de 5 anos:</span> {escolaLeft.ei[0].alunos5}
+                          </p>
                         </>
                         :
                         <>
@@ -200,6 +223,9 @@ const Escola = () => {
                           </p>
                           <p className='card__text'>
                             <span>N° turmas integrais:</span> Nenhuma
+                          </p>
+                          <p className='card__text'>
+                            <span>N° alunos de 5 anos:</span> 0
                           </p>
                         </>
                       }
@@ -216,13 +242,14 @@ const Escola = () => {
           </div>
         </section>
       </section>
+
       <div className='rigth__side__container'>
         <h2 className='rigth__side__title'>Modalidade Escolar</h2>
         <section className='rigth__side__content'>
         <ButtonsOptions content={[
           {
             text: '0 à 3 anos',
-            url: 'escola/03anos/show'
+            url: 'educacao-infantil/show'
           },
           {
             text: 'EI',
@@ -238,11 +265,11 @@ const Escola = () => {
           },
           {
             text: '4 anos',
-            url: 'escola/4anos/show'
+            url: 'educacao-infantil/show'
           },
           {
             text: '5 anos',
-            url: 'escola/5anos/show'
+            url: 'educacao-infantil/show'
           },
           {
             text: 'PRÉ',
@@ -319,7 +346,7 @@ const Escola = () => {
                 <>
                   <div className='rigth__content__card__edit'>
                     <p className='card__text'>
-                      <span>N° de turmas:</span> {item.nTurmas}
+                      <span>Escola:</span> {item.fkescola.nome}
                     </p>
                     
                     <div>
@@ -332,14 +359,8 @@ const Escola = () => {
                     </div>
                   </div>
                   <p className='card__text'>
-                    <span>Parcial:</span> {item.parcial}
-                  </p>
-                  <p className='card__text'>
-                    <span>Integral:</span> {item.integral}
-                  </p>  
-                  <p className='card__text'>
-                    <span>Escola:</span> {item.fkescola.nome}
-                  </p>  
+                    <span>N° alunos de 0 à 3 anos:</span> {item.alunos0a3}
+                  </p> 
                 </>
               }
             </section>
@@ -458,6 +479,80 @@ const Escola = () => {
         }
         </section>
       }
+      
+      {
+        type === '4 anos'
+        &&
+        <section className='rigth__side__show'>
+        {
+          escola && escola.map((item) => (
+            <section className='rigth__side__card' key={item._id}>
+              {
+                loading ?
+                <span className="loader-"></span>
+                :
+                <>
+                  <div className='rigth__content__card__edit'>
+                    <p className='card__text'>
+                      <span>Escola:</span> {item.fkescola.nome}
+                    </p>
+                    
+                    <div>
+                      <button className='card__button__edit'>
+                        <IconEdit/>
+                      </button>
+                      <button className='card__button__edit'>
+                        <IconTrash/>
+                      </button>
+                    </div>
+                  </div>
+                  <p className='card__text'>
+                    <span>N° alunos com 4 anos:</span> {item.alunos4}
+                  </p> 
+                </>
+              }
+            </section>
+          )) 
+        }
+        </section>
+      }
+
+      {
+        type === '5 anos'
+        &&
+        <section className='rigth__side__show'>
+        {
+          escola && escola.map((item) => (
+            <section className='rigth__side__card' key={item._id}>
+              {
+                loading ?
+                <span className="loader-"></span>
+                :
+                <>
+                  <div className='rigth__content__card__edit'>
+                    <p className='card__text'>
+                      <span>Escola:</span> {item.fkescola.nome}
+                    </p>
+                    
+                    <div>
+                      <button className='card__button__edit'>
+                        <IconEdit/>
+                      </button>
+                      <button className='card__button__edit'>
+                        <IconTrash/>
+                      </button>
+                    </div>
+                  </div>
+                  <p className='card__text'>
+                    <span>N° alunos com 5 anos:</span> {item.alunos5}
+                  </p> 
+                </>
+              }
+            </section>
+          )) 
+        }
+        </section>
+      }
 
       {
         type === 'PRÉ'
@@ -473,7 +568,7 @@ const Escola = () => {
                 <>
                   <div className='rigth__content__card__edit'>
                     <p className='card__text'>
-                      <span>N° de turmas:</span> {item.nTurmas}
+                      <span>Escola:</span> {item.fkescola.nome}
                     </p>
                     
                     <div>
@@ -486,7 +581,7 @@ const Escola = () => {
                     </div>
                   </div>
                   <p className='card__text'>
-                    <span>Escola:</span> {item.fkescola.nome}
+                    <span>N° de turmas PRÉ:</span> {item.nTurmas}
                   </p>  
                 </>
               }
@@ -510,7 +605,7 @@ const Escola = () => {
                 <>
                   <div className='rigth__content__card__edit'>
                     <p className='card__text'>
-                      <span>N° de turmas:</span> {item.nTurmas}
+                      <span>Escola:</span> {item.fkescola.nome}
                     </p>
                     
                     <div>
@@ -523,7 +618,7 @@ const Escola = () => {
                     </div>
                   </div>
                   <p className='card__text'>
-                    <span>Escola:</span> {item.fkescola.nome}
+                    <span>N° de turmas CRECHE:</span> {item.nTurmas}
                   </p>  
                 </>
               }

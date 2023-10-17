@@ -975,6 +975,24 @@ const Modal = ({content}) => {
                           value={input2} 
                           placeholder='N° de turmas integrais'/>
                         
+                        <input 
+                          onChange={handleInput3} 
+                          type='text' 
+                          value={input3} 
+                          placeholder='N° de alunos de 0 à 3 anos'/>
+
+                        <input 
+                          onChange={handleInput4} 
+                          type='text' 
+                          value={input4} 
+                          placeholder='N° de alunos de 4 anos'/>
+                        
+                        <input 
+                          onChange={handleInput5} 
+                          type='text' 
+                          value={input5} 
+                          placeholder='N° de alunos de 5 anos'/>
+                        
                         <select onChange={handleSelectSchool}>
                           <option disabled></option>
                           {
@@ -1011,6 +1029,24 @@ const Modal = ({content}) => {
                           type='text' 
                           value={input2} 
                           placeholder='N° de turmas integrais'/>
+
+                        <input 
+                          onChange={handleInput3} 
+                          type='text' 
+                          value={input3} 
+                          placeholder='N° de alunos de 0 à 3 anos'/>
+
+                        <input 
+                          onChange={handleInput4} 
+                          type='text' 
+                          value={input4} 
+                          placeholder='N° de alunos de 4 anos'/>
+                        
+                        <input 
+                          onChange={handleInput5} 
+                          type='text' 
+                          value={input5} 
+                          placeholder='N° de alunos de 5 anos'/>
                         
                         <select onChange={handleSelectSchool}>
                           <option ></option>

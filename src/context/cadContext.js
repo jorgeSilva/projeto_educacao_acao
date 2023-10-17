@@ -72,6 +72,9 @@ function CadProvider({children}){
     setSelected(String(s._id));
   }
 
+
+  console.log(input0, input1, input2, input3, input4, input5);
+
   async function handleSubmit(e){
     e.preventDefault()
 
@@ -290,9 +293,13 @@ function CadProvider({children}){
         nTurmas: input0,
         parcial: input1,
         integral: input2,
+        alunos0a3: input3,
+        alunos4: input4,
+        alunos5: input5,
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
+        console.log(data);
         setLoading(false)
       }).catch(e => {
         setError(e.response.data.error);
