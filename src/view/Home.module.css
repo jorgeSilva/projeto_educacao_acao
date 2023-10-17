@@ -312,12 +312,12 @@
     grid-column: 3;
     justify-self: flex-end;
     grid-row: 1;
-    display: block;
+    display: flex;
   }
 
   
   .modal__button__open__active{
-    display: block;
+    display: flex;
   }
   
 }

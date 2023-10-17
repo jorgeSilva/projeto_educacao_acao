@@ -442,6 +442,33 @@ function CadProvider({children}){
         setInput9('')
         setSelected('')
       })
+    }else if(type === 'servidores'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        nome: input0,
+        funcao: input1,
+        cargo: input2,
+        fkescola: selected,
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        console.log(data);
+        setLoading(false)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
     }
   }
 

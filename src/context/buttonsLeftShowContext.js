@@ -8,7 +8,7 @@ function ButtonLeftShowProvider({children}){
   const [url, setUrl] = React.useState('')
   const [loadingLeft, setLoadingLeft] = React.useState('')
   const [escolaLeft, setEscolaLeft] = React.useState('')
-  const [type, setType] = React.useState('')
+  const [typeLeft, setType] = React.useState('')
   const [date, setDate] = React.useState('')
   const [valuePMI, setValuePMI] = React.useState('')
   const [valueSEE, setValueSEE] = React.useState('')
@@ -39,15 +39,11 @@ function ButtonLeftShowProvider({children}){
       .then(({data}) => {
         setDataLeft('')
         setDataLeft(data)
-        // let arrDate = data.map(({date}) => ({date}))
-
-        // console.log(arrDate);
         setDate(data.map(({date}) => ({date})))
         setValuePMI(data.map(({pmi}) => ({pmi})))
         setValueSEE(data.map(({see}) => ({see})))
         setLoadingLeft(false)
       }).catch(e => {
-        // console.log(e)
         setLoadingLeft(false)
       })
     }
@@ -61,7 +57,7 @@ function ButtonLeftShowProvider({children}){
         setEscolaLeft,
         setDataLeft,
         handleGet,
-        type,
+        typeLeft,
         loadingLeft,
         escolaLeft,
         dataLeft,

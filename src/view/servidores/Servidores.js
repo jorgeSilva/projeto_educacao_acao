@@ -22,6 +22,7 @@ const Servidores = () => {
 
   const {
     escolaLeft,
+    typeLeft,
     dataLeft,
     loadingLeft
   } = React.useContext(buttonLetContext)
@@ -91,42 +92,471 @@ const Servidores = () => {
           
           <div className='left__side__show'>
             {
-              dataLeft ?
-              dataLeft.map((item) => (
-                <section className='rigth__side__card' key={item._id}>
+              (
+                typeLeft === 'Merendeira Efetiva'
+                &&
+                <>
                   {
-                    loadingLeft ?
-                    <span className="loader-"></span>
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado servidor efetivo', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
                     :
-                    <>
-                    <div className='rigth__content__card__edit'>
-                      <p className='card__text'>
-                        <span>Nome:</span> {item.nome}
-                      </p>
-                      <div>
-                        <button className='card__button__edit'>
-                          <IconEdit/>
-                        </button>
-                        <button className='card__button__edit'>
-                          <IconTrash/>
-                        </button>
-                      </div>
-                    </div>
-                    <p className='card__text'>
-                      <span>Função:</span> {item.funcao}
-                    </p>
-                    <p className='card__text'>
-                      <span>Cargo:</span> {item.cargo}
-                    </p>
-                    <p className='card__text'>
-                      <span>Escola:</span> {item.fkescola.nome}
-                    </p>  
-                    </>
-                  }
-                </section>
-              )) 
-              :
-              <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Merendeira Contratada'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado servidor contratado', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Aux. Limpeza contratada'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado auxiliar de limpeza', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Motorista Efetivo'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado motorista efetivo', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Motorista Contratado'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado motorista contratado', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Cuidador'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado cuidador', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Monitor'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado monitor', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              <p className='rigth__side__text__report'>
+                Escolha uma opção e veja os cadastros
+              </p>
             }
           </div>
         </section>
