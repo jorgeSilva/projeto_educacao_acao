@@ -756,6 +756,234 @@ const ModalUpdate = ({content}) => {
             </main>
           </section>
         )
+
+        ||
+
+        (
+          content.type && content.type === 'pre'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de determinada escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'creche'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de determinada escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'educacao-jovem-adulto'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de determinada escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'aee'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de determinada escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nTurmas}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
       }
       {
         success && <Success content={success}/>
