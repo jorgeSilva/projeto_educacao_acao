@@ -28,6 +28,8 @@ const Setor = () => {
   const [active, setActive] = React.useState(false)
   const [stop, setStop] = React.useState('')
 
+  console.log(type);
+
   return (
     <article className='container'>
       <section className='left__side__container'>
@@ -119,8 +121,7 @@ const Setor = () => {
         
         <section className='rigth__side__show'>
           {
-            type === 'Merenda'
-            ?
+            type === 'Merenda' ?
             <>
               {
                 data ? data.map((item) => (
@@ -178,6 +179,66 @@ const Setor = () => {
                           }
                         </>
                       }
+                    </section>
+                  </>
+                )) 
+                :
+                <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
+              }
+            </>
+            :
+            type === 'Transporte' ?
+            <>
+              {
+                data ? data.map((item) => (
+                  <>
+                    <section className='rigth__side__card' key={item._id}>
+                      {
+                        active && stop === item._id ? 
+                        <>
+                        {
+                          active === 'update'?
+                          <ModalUpdate content={{item, type:'convenio', setActive}}/>
+                          :
+                          <ModalDelete content={{item, type:'convenio', setActive, h1: 'Exclua o registro do determinado funcionário', name: 'Transporte'}}/>
+                        }
+                      </>
+                      :
+                      <>
+                        {
+                          loading ?
+                          <span className="loader-"></span>
+                          :
+                          <>
+                            <div className='rigth__content__card__edit'>
+                              <p className='card__text'>
+                                <span>Nome:</span> {item.nome}
+                              </p>
+                              <div>
+                                <button className='card__button__edit' onClick={() => {
+                                  setActive('update')
+                                  setStop(item._id)
+                                }}>
+                                  <IconEdit/>
+                                </button>
+                                <button className='card__button__edit' onClick={() => {
+                                  setActive('delete')
+                                  setStop(item._id)
+                                }}>
+                                  <IconTrash/>
+                                </button>
+                              </div>
+                            </div>
+                            <p className='card__text'>
+                              <span>Setor:</span> {item.setor}
+                            </p>
+                            <p className='card__text'>
+                              <span>Obs:</span> {item.obs}
+                            </p>
+                          </>
+                        }
+                      </>
+                    }
                     </section>
                   </>
                 )) 
