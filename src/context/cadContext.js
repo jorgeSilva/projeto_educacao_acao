@@ -78,12 +78,13 @@ function CadProvider({children}){
     if(type === 'setor'){
       setLoading(true)
       await api.post(`${type}`, {
-        nome: input0,
-        setor: input1,
-        obs: input2
+        nome: String(input0).trim(),
+        setor: String(input1).trim(),
+        obs: String(input2).trim()
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -99,18 +100,20 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'convenio'){
       setLoading(true)
       await api.post(`${type}`, {
-        convenio: input0,
-        pmi: input1,
-        see: input2,
-        contraPartida: input3,
-        date: input4
+        convenio: String(input0).trim(),
+        pmi: String(input1).trim(),
+        see: String(input2).trim(),
+        contraPartida: String(input3).trim(),
+        date: String(input4).trim()
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -126,20 +129,21 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'servidor'){
       setLoading(true)
       await api.post(`/${type}`, {
-        nome: input0,
-        funcao: input1,
-        cargo: input2,
+        nome: String(input0).trim(),
+        funcao: String(input1).trim(),
+        cargo: String(input2).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
-        console.log(selected);
         setLoading(false)
       }).finally(() => {
         setInput0('')
@@ -153,12 +157,13 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'professor'){
       setLoading(true)
       await api.post(`${type}`, {
-        nome: input0,
-        funcao: input1,
+        nome: String(input0).trim(),
+        funcao: String(input1).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
@@ -166,6 +171,7 @@ function CadProvider({children}){
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).finally(() => {
         setInput0('')
         setInput1('')
@@ -178,23 +184,25 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'aluno'){
       setLoading(true)
       await api.post(`${type}`, {
-        nome: input0,
-        dataNasc: input1,
-        nomeMae: input2,
-        nomePai: input3,
-        rua: input4,
-        bairro: input5,
-        nCasa: input6,
-        contato: input7,
-        periodo: input8,
+        nome: String(input0).trim(),
+        dataNasc: String(input1).trim(),
+        nomeMae: String(input2).trim(),
+        nomePai: String(input3).trim(),
+        rua: String(input4).trim(),
+        bairro: String(input5).trim(),
+        nCasa: String(input6).trim(),
+        contato: String(input7).trim(),
+        periodo: String(input8).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -210,16 +218,18 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'escola'){
       setLoading(true)
       await api.post(`${type}`, {
-        nome: input0,
-        modalidade: input1,
-        n1: input2,
+        nome: String(input0).trim(),
+        modalidade: String(input1).trim(),
+        n1: String(input2).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -235,15 +245,17 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'aee'){
       setLoading(true)
       await api.post(`${type}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -259,15 +271,17 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'educacao-jovem-adulto'){
       setLoading(true)
       await api.post(`${type}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -283,21 +297,22 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'educacao-infantil'){
       setLoading(true)
       await api.post(`${type}`, {
-        nTurmas: input0,
-        parcial: input1,
-        integral: input2,
-        alunos0a3: input3,
-        alunos4: input4,
-        alunos5: input5,
+        nTurmas: String(input0).trim(),
+        parcial: String(input1).trim(),
+        integral: String(input2).trim(),
+        alunos0a3: String(input3).trim(),
+        alunos4: String(input4).trim(),
+        alunos5: String(input5).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -313,15 +328,17 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'pre'){
       setLoading(true)
       await api.post(`${type}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -337,15 +354,17 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }else if(type === 'creche'){
       setLoading(true)
       await api.post(`${type}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -361,6 +380,7 @@ function CadProvider({children}){
         setInput8('')
         setInput9('')
         setSelected('')
+        setTimeout(window.location.reload(), 2000)
       })
     }
   }
@@ -371,9 +391,9 @@ function CadProvider({children}){
     if(type === 'setor'){
       setLoading(true)
       await api.put(`${type}/dados/${selectUser}`, {
-        nome: input0,
-        setor: input1,
-        obs: input2
+        nome: String(input0).trim(),
+        setor: String(input1).trim(),
+        obs: String(input2).trim()
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -398,11 +418,11 @@ function CadProvider({children}){
     }else if(type === 'convenio'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        convenio: input0,
-        pmi: input1,
-        see: input2,
-        contraPartida: input3,
-        date: input4
+        convenio: String(input0).trim(),
+        pmi: String(input1).trim(),
+        see: String(input2).trim(),
+        contraPartida: String(input3).trim(),
+        date: String(input4).trim()
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -426,8 +446,8 @@ function CadProvider({children}){
     }else if(type === 'professores'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nome: input0,
-        funcao: input1,
+        nome: String(input0).trim(),
+        funcao: String(input1).trim(),
         fkescola: selected,
       }).then(({data}) => {
         setSuccess(data.msg)
@@ -452,9 +472,9 @@ function CadProvider({children}){
     }else if(type === 'servidores'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nome: input0,
-        funcao: input1,
-        cargo: input2,
+        nome: String(input0).trim(),
+        funcao: String(input1).trim(),
+        cargo: String(input2).trim(),
         fkescola: selected,
       }).then(({data}) => {
         setSuccess(data.msg)
@@ -479,7 +499,7 @@ function CadProvider({children}){
     }else if(type === '0a3anos'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        alunos0a3: input0,
+        alunos0a3: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -503,7 +523,7 @@ function CadProvider({children}){
     }else if(type === 'alunos4'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        alunos4: input0,
+        alunos4: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -527,7 +547,7 @@ function CadProvider({children}){
     }else if(type === 'alunos5'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        alunos5: input0,
+        alunos5: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -551,9 +571,9 @@ function CadProvider({children}){
     }else if(type === 'educacao-infantil'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nTurmas: input0,
-        parcial: input1,
-        integral: input2,
+        nTurmas: String(input0).trim(),
+        parcial: String(input1).trim(),
+        integral: String(input2).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -577,7 +597,7 @@ function CadProvider({children}){
     }else if(type === 'escolaN1C'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        n1: input0,
+        n1: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -601,7 +621,7 @@ function CadProvider({children}){
     }else if(type === 'pre'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -626,7 +646,7 @@ function CadProvider({children}){
     }else if(type === 'creche'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -651,7 +671,7 @@ function CadProvider({children}){
     }else if(type === 'educacao-jovem-adulto'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -676,7 +696,7 @@ function CadProvider({children}){
     }else if(type === 'aee'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nTurmas: input0,
+        nTurmas: String(input0).trim(),
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -700,8 +720,8 @@ function CadProvider({children}){
     }else if(type === 'escola'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nome: input0,
-        modalidade: input1
+        nome: String(input0).trim(),
+        modalidade: String(input1).trim()
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
@@ -725,15 +745,15 @@ function CadProvider({children}){
     }else if(type === 'aluno'){
       setLoading(true)
       await api.put(`${type}/update/${selectUser}`, {
-        nome: input0,
-        dataNasc: input1,
-        nomeMae: input2,
-        nomePai: input3,
-        rua: input4,
-        bairro: input5,
-        nCasa: input6,
-        contato: input7,
-        periodo: input8,
+        nome: String(input0).trim(),
+        dataNasc: String(input1).trim(),
+        nomeMae: String(input2).trim(),
+        nomePai: String(input3).trim(),
+        rua: String(input4).trim(),
+        bairro: String(input5).trim(),
+        nCasa: String(input6).trim(),
+        contato: String(input7).trim(),
+        periodo: String(input8).trim(),
         fkescola: selected
       }).then(({data}) => {
         setSuccess(data.msg)
