@@ -117,14 +117,7 @@ const Escola = () => {
                       <p className='card__text'>
                         <span>Nome:</span> {escolaLeft.escola[0].nome}
                       </p>
-                      <div>
-                        <button className='card__button__edit'>
-                          <IconEdit/>
-                        </button>
-                        <button className='card__button__edit'>
-                          <IconTrash/>
-                        </button>
-                      </div>
+                     
                     </div>
                     <div className='card__style__school'>
                       <span style={{display:'flex', width:'100%', gap:'.5rem', flexDirection:'column',}}>
@@ -308,27 +301,47 @@ const Escola = () => {
             data && data.map((item) => (
               <section className='rigth__side__card' key={item._id}>
                 {
-                  loading ?
-                  <span className="loader-"></span>
+                  active && stop === item._id ?
+                  <>
+                    {
+                      active === 'update'?
+                      <ModalUpdate content={{item, type:'escola', setActive}}/>
+                      :
+                      <ModalDelete content={{item, type:'escola', setActive, h1: 'Apague o registro da escola', name: 'escola'}}/>
+                    }
+                  </>
                   :
                   <>
-                    <div className='rigth__content__card__edit'>
-                      <p className='card__text'>
-                        <span>Nome escola:</span> {item.nome}
-                      </p>
-                      
-                      <div>
-                        <button className='card__button__edit'>
-                          <IconEdit/>
-                        </button>
-                        <button className='card__button__edit'>
-                          <IconTrash/>
-                        </button>
-                      </div>
-                    </div>
-                    <p className='card__text'>
-                      <span>Modalidade escola: </span> {item.modalidade}
-                    </p>
+                    {
+                      loading ?
+                      <span className="loader-"></span>
+                      :
+                      <>
+                        <div className='rigth__content__card__edit'>
+                          <p className='card__text'>
+                            <span>Nome escola:</span> {item.nome}
+                          </p>
+                          
+                          <div>
+                            <button className='card__button__edit' onClick={() => {
+                              setActive('update')
+                              setStop(item._id)
+                            }}>
+                              <IconEdit/>
+                            </button>
+                            <button className='card__button__edit' onClick={() => {
+                              setActive('delete')
+                              setStop(item._id)
+                            }}>
+                              <IconTrash/>
+                            </button>
+                          </div>
+                        </div>
+                        <p className='card__text'>
+                          <span>Modalidade escola: </span> {item.modalidade}
+                        </p>
+                      </>
+                    }
                   </>
                 }
               </section>
@@ -867,51 +880,71 @@ const Escola = () => {
             escola && escola.map((item) => (
               <section className='rigth__side__card' key={item._id}>
                 {
-                  loading ?
-                  <span className="loader-"></span>
+                  active && stop === item._id ?
+                  <>
+                    {
+                      active === 'update'?
+                      <ModalUpdate content={{item, type:'aluno', setActive}}/>
+                      :
+                      <ModalDelete content={{item, type:'aluno', setActive, h1: 'Delete o registro de um aluno', name: 'aluno'}}/>
+                    }
+                  </>
                   :
                   <>
-                    <div className='rigth__content__card__edit'>
-                      <p className='card__text'>
-                        <span>Nome aluno:</span> {item.nome}
-                      </p>
-                      
-                      <div>
-                        <button className='card__button__edit'>
-                          <IconEdit/>
-                        </button>
-                        <button className='card__button__edit'>
-                          <IconTrash/>
-                        </button>
-                      </div>
-                    </div>
-                    <p className='card__text'>
-                      <span>Data nascimento: </span> {item.dataNasc}
-                    </p>
-                    <p className='card__text'>
-                      <span>Escola: </span> {item.fkescola.nome}
-                    </p>
-                    <p className='card__text'>
-                      <span>Periodo: </span> {item.periodo}
-                    </p>
-                    <p className='card__text'>
-                      <span>Nome da mãe: </span> {item.nomeMae}
-                    </p>
-                    <p className='card__text'>
-                      <span>Nome do pai: </span> {item.nomePai}
-                    </p>
-                    <p className='card__text'>
-                      <span>Bairro: </span> {item.bairro}
-                    </p>
-                    <p className='card__text'>
-                      <span>Rua: </span> {item.rua}
-                    </p>
-                    <p className='card__text'>
-                      <span>N° casa: </span> {item.nCasa}
-                    </p>
-                    <p className='card__text'>
-                      <span>Contato: </span> {item.contato}
-                    </p>
+                    {
+                      loading ?
+                      <span className="loader-"></span>
+                      :
+                      <>
+                        <div className='rigth__content__card__edit'>
+                          <p className='card__text'>
+                            <span>Nome aluno:</span> {item.nome}
+                          </p>
+                          
+                          <div>
+                            <button className='card__button__edit' onClick={() => {
+                              setActive('update')
+                              setStop(item._id)
+                            }}>
+                              <IconEdit/>
+                            </button>
+                            <button className='card__button__edit' onClick={() => {
+                              setActive('delete')
+                              setStop(item._id)
+                            }}>
+                              <IconTrash/>
+                            </button>
+                          </div>
+                        </div>
+                        <p className='card__text'>
+                          <span>Data nascimento: </span> {item.dataNasc}
+                        </p>
+                        <p className='card__text'>
+                          <span>Escola: </span> {item.fkescola.nome}
+                        </p>
+                        <p className='card__text'>
+                          <span>Periodo: </span> {item.periodo}
+                        </p>
+                        <p className='card__text'>
+                          <span>Nome da mãe: </span> {item.nomeMae}
+                        </p>
+                        <p className='card__text'>
+                          <span>Nome do pai: </span> {item.nomePai}
+                        </p>
+                        <p className='card__text'>
+                          <span>Bairro: </span> {item.bairro}
+                        </p>
+                        <p className='card__text'>
+                          <span>Rua: </span> {item.rua}
+                        </p>
+                        <p className='card__text'>
+                          <span>N° casa: </span> {item.nCasa}
+                        </p>
+                        <p className='card__text'>
+                          <span>Contato: </span> {item.contato}
+                        </p>
+                      </>
+                    }
                   </>
                 }
               </section>
@@ -928,51 +961,71 @@ const Escola = () => {
             escola && escola.map((item) => (
               <section className='rigth__side__card' key={item._id}>
                 {
-                  loading ?
-                  <span className="loader-"></span>
+                  active && stop === item._id ?
+                  <>
+                    {
+                      active === 'update'?
+                      <ModalUpdate content={{item, type:'aluno', setActive}}/>
+                      :
+                      <ModalDelete content={{item, type:'aluno', setActive, h1: 'Delete o registro de um aluno', name: 'aluno'}}/>
+                    }
+                  </>
                   :
                   <>
-                    <div className='rigth__content__card__edit'>
-                      <p className='card__text'>
-                        <span>Nome aluno:</span> {item.nome}
-                      </p>
-                      
-                      <div>
-                        <button className='card__button__edit'>
-                          <IconEdit/>
-                        </button>
-                        <button className='card__button__edit'>
-                          <IconTrash/>
-                        </button>
-                      </div>
-                    </div>
-                    <p className='card__text'>
-                      <span>Data nascimento: </span> {item.dataNasc}
-                    </p>
-                    <p className='card__text'>
-                      <span>Escola: </span> {item.fkescola.nome}
-                    </p>
-                    <p className='card__text'>
-                      <span>Periodo: </span> {item.periodo}
-                    </p>
-                    <p className='card__text'>
-                      <span>Nome da mãe: </span> {item.nomeMae}
-                    </p>
-                    <p className='card__text'>
-                      <span>Nome do pai: </span> {item.nomePai}
-                    </p>
-                    <p className='card__text'>
-                      <span>Bairro: </span> {item.bairro}
-                    </p>
-                    <p className='card__text'>
-                      <span>Rua: </span> {item.rua}
-                    </p>
-                    <p className='card__text'>
-                      <span>N° casa: </span> {item.nCasa}
-                    </p>
-                    <p className='card__text'>
-                      <span>Contato: </span> {item.contato}
-                    </p>
+                    {
+                      loading ?
+                      <span className="loader-"></span>
+                      :
+                      <>
+                        <div className='rigth__content__card__edit'>
+                          <p className='card__text'>
+                            <span>Nome aluno:</span> {item.nome}
+                          </p>
+                          
+                          <div>
+                            <button className='card__button__edit' onClick={() => {
+                              setActive('update')
+                              setStop(item._id)
+                            }}>
+                              <IconEdit/>
+                            </button>
+                            <button className='card__button__edit' onClick={() => {
+                              setActive('delete')
+                              setStop(item._id)
+                            }}>
+                              <IconTrash/>
+                            </button>
+                          </div>
+                        </div>
+                        <p className='card__text'>
+                          <span>Data nascimento: </span> {item.dataNasc}
+                        </p>
+                        <p className='card__text'>
+                          <span>Escola: </span> {item.fkescola.nome}
+                        </p>
+                        <p className='card__text'>
+                          <span>Periodo: </span> {item.periodo}
+                        </p>
+                        <p className='card__text'>
+                          <span>Nome da mãe: </span> {item.nomeMae}
+                        </p>
+                        <p className='card__text'>
+                          <span>Nome do pai: </span> {item.nomePai}
+                        </p>
+                        <p className='card__text'>
+                          <span>Bairro: </span> {item.bairro}
+                        </p>
+                        <p className='card__text'>
+                          <span>Rua: </span> {item.rua}
+                        </p>
+                        <p className='card__text'>
+                          <span>N° casa: </span> {item.nCasa}
+                        </p>
+                        <p className='card__text'>
+                          <span>Contato: </span> {item.contato}
+                        </p>
+                      </>
+                    }
                   </>
                 }
               </section>

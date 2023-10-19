@@ -72,9 +72,6 @@ function CadProvider({children}){
     setSelected(String(s._id));
   }
 
-
-  console.log(input0, input1, input2, input3, input4, input5);
-
   async function handleSubmit(e){
     e.preventDefault()
 
@@ -380,6 +377,8 @@ function CadProvider({children}){
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
+
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -407,6 +406,7 @@ function CadProvider({children}){
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -431,8 +431,8 @@ function CadProvider({children}){
         fkescola: selected,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -458,8 +458,8 @@ function CadProvider({children}){
         fkescola: selected,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -482,8 +482,8 @@ function CadProvider({children}){
         alunos0a3: input0,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -506,8 +506,8 @@ function CadProvider({children}){
         alunos4: input0,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -530,8 +530,8 @@ function CadProvider({children}){
         alunos5: input0,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -556,8 +556,8 @@ function CadProvider({children}){
         integral: input2,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -580,8 +580,8 @@ function CadProvider({children}){
         n1: input0,
       }).then(({data}) => {
         setSuccess(data.msg)
-        console.log(data);
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -605,6 +605,8 @@ function CadProvider({children}){
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
+
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -628,6 +630,8 @@ function CadProvider({children}){
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
+
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -651,6 +655,8 @@ function CadProvider({children}){
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
+
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)
@@ -674,6 +680,65 @@ function CadProvider({children}){
       }).then(({data}) => {
         setSuccess(data.msg)
         setLoading(false)
+        setTimeout(window.location.reload(), 2000)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'escola'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        nome: input0,
+        modalidade: input1
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+        const time = setTimeout(window.location.reload(), 5000)
+      }).catch(e => {
+        setError(e.response.data.error);
+        setLoading(false)
+      }).finally(() => {
+        setInput0('')
+        setInput1('')
+        setInput2('')
+        setInput3('')
+        setInput4('')
+        setInput5('')
+        setInput6('')
+        setInput7('')
+        setInput8('')
+        setInput9('')
+        setSelected('')
+      })
+    }else if(type === 'aluno'){
+      setLoading(true)
+      await api.put(`${type}/update/${selectUser}`, {
+        nome: input0,
+        dataNasc: input1,
+        nomeMae: input2,
+        nomePai: input3,
+        rua: input4,
+        bairro: input5,
+        nCasa: input6,
+        contato: input7,
+        periodo: input8,
+        fkescola: selected
+      }).then(({data}) => {
+        setSuccess(data.msg)
+        setLoading(false)
+        const time = setTimeout(window.location.reload(), 5000)
       }).catch(e => {
         setError(e.response.data.error);
         setLoading(false)

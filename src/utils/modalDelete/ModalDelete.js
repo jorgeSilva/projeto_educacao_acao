@@ -15,9 +15,9 @@ const ModalDelete = ({content}) => {
     setLoading(true)
     await api.delete(`${content.type}/delete/${content.item._id}`)
     .then(({data}) => {
-      console.log(data);
       setSuccess(data.msg)
       setLoading(false)
+      setTimeout(window.location.reload(), 2000)
     }).catch(e => {
       console.log(e);
       setLoading(false)

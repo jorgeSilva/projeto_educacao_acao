@@ -46,8 +46,6 @@ const ModalUpdate = ({content}) => {
     setType(content.type)
   }, [input0, input1, input2, input3, input4, input5, input6, input7, input8])
 
-  console.log(content.item);
-
   return (
     <article className={style.modal__container}>
       <section className={style.modal__content__button}>
@@ -58,6 +56,75 @@ const ModalUpdate = ({content}) => {
         </button>
       </section>
       {
+        (
+          content.type && content.type === 'escola'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere as informações relacionadas a escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          required 
+                          type='text' 
+                          value={content.item.nome} 
+                          placeholder={`${content.item.nome}`}/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='text' 
+                          value={input1} 
+                          placeholder={`${content.item.modalidade}`}/>
+
+                        <button 
+                          className={style.login__button__loading} onClick={(e) => {
+                            e.preventDefault()
+                          }}>
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0}
+                          required 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nome}`}/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='text' 
+                          value={input1} 
+                          placeholder={`${content.item.modalidade}`}/>
+
+                        <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
         (
           content.type && content.type === 'setor'
           &&
@@ -972,6 +1039,183 @@ const ModalUpdate = ({content}) => {
                           placeholder={`${content.item.nTurmas}`}/>
 
                         <button onClick={handleEdit}>Editar</button>
+                      </>
+                    }
+
+                    {
+                      !success && error && <Error content={error}/>
+                    }
+                  </form>
+                </div>
+              </section> 
+            </main>
+          </section>
+        )
+
+        ||
+
+        (
+          content.type && content.type === 'aluno'
+          &&
+          <section className={style.modal__content__form}>
+            <main className={style.login__body}>
+              <section className={style.login__content}>
+                 <div className={style.login__rigth__side}>
+                  <h1 className={style.login__rigth__side__h1}>
+                    Edite as informações
+                  </h1>
+                  <p className={style.login__text__aux}>
+                    Altere a quantidade de alunos de determinada escola
+                  </p>
+
+                  <form className={style.login__form}>
+                    {
+                      loading ?
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder='Nome aluno'/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='date' 
+                          value={input1} 
+                          placeholder='Data de nascimento'/>
+
+                        <input 
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder='Nome da mãe'/>
+                          
+                        <input 
+                          onChange={handleInput3}
+                          type='text' 
+                          value={input3} 
+                          placeholder='Nome da pai'/>
+                        
+                        <input 
+                          onChange={handleInput4}
+                          type='text' 
+                          value={input4} 
+                          placeholder='Rua'/>
+                        
+                        <input 
+                          onChange={handleInput5}
+                          type='text' 
+                          value={input5} 
+                          placeholder='Bairro'/>
+
+                        <input 
+                          onChange={handleInput6}
+                          type='text' 
+                          value={input6} 
+                          placeholder='Numero da casa'/>
+
+                        <input 
+                          onChange={handleInput7}
+                          type='text' 
+                          value={input7} 
+                          placeholder='Contato'/>
+
+                        <input 
+                          onChange={handleInput8}
+                          type='text' 
+                          value={input8} 
+                          placeholder='Periodo'/>
+
+                        <select onChange={handleSelectSchool}>
+                        <option disabled></option>
+
+                          {
+                            schools[0] ? schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                            :
+                            <option>Ainda não tem escolas</option>
+                          }
+                        </select>
+
+                        <button className={style.login__button__loading} >
+                          <span className="loader"></span>
+                        </button>  
+                      </>
+                      :
+                      <>
+                        <input 
+                          onChange={handleInput0} 
+                          type='text' 
+                          value={input0} 
+                          placeholder={`${content.item.nome}`}/>
+
+                        <input 
+                          onChange={handleInput1}
+                          type='date' 
+                          value={input1} 
+                          placeholder={`${content.item.date}`}/>
+
+                        <input 
+                          onChange={handleInput2}
+                          type='text' 
+                          value={input2} 
+                          placeholder={`${content.item.nomeMae}`}/>
+                          
+                        <input 
+                          onChange={handleInput3}
+                          type='text' 
+                          value={input3} 
+                          placeholder={`${content.item.nomePai}`}/>
+                        
+                        <input 
+                          onChange={handleInput4}
+                          type='text' 
+                          value={input4} 
+                          placeholder={`${content.item.rua}`}/>
+                        
+                        <input 
+                          onChange={handleInput5}
+                          type='text' 
+                          value={input5} 
+                          placeholder={`${content.item.bairro}`}/>
+
+                        <input 
+                          onChange={handleInput6}
+                          type='text' 
+                          value={input6} 
+                          placeholder={`${content.item.nCasa}`}/>
+
+                        <input 
+                          onChange={handleInput7}
+                          type='text' 
+                          value={input7} 
+                          placeholder={`${content.item.contato}`}/>
+
+                        <input 
+                          onChange={handleInput8}
+                          type='text' 
+                          value={input8} 
+                          placeholder={`${content.item.periodo}`}/>
+                        
+                        <select onChange={handleSelectSchool}>
+                          <option></option>
+                          {
+                            schools[0] ? schools.map(item => (
+                              <option key={item._id} value={item._id}>
+                                {item.nome}
+                              </option>
+                            ))
+                            :
+                            <option>Ainda não tem escolas</option>
+                          }
+                        </select>
+
+                        <button onClick={handleEdit}>
+                          Enviar
+                        </button>
                       </>
                     }
 
