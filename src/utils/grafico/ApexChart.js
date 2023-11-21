@@ -33,7 +33,7 @@ export default function Chart({valuePMI, valueSEE, date}) {
       intersect: false
     },
     xaxis: {
-      categories: date.map(item =>  item?.date),
+      categories: date?.map(item =>  item?.date),
     },
     colors: ['#3a5a40', '#d90429'],
   }

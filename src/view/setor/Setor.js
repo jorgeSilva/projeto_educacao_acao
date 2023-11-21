@@ -64,7 +64,7 @@ const Setor = () => {
           
           <div className='left__side__show__convenio'>
             {
-              dataLeft ? 
+              date && valuePMI && valueSEE ? 
               <Chart date={date} valuePMI={valuePMI} valueSEE={valueSEE}/>
               :
               <p style={{textAlign:'center'}}>Selecione um campo para exibir o grafico</p>

@@ -37,8 +37,6 @@ function ButtonLeftShowProvider({children}){
     }else if(select === 'convenio'){
       await api.get(`/${String(e)}`)
       .then(({data}) => {
-        setDataLeft('')
-        setDataLeft(data)
         setDate(data.map(({date}) => ({date})))
         setValuePMI(data.map(({pmi}) => ({pmi})))
         setValueSEE(data.map(({see}) => ({see})))
