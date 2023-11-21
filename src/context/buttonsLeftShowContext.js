@@ -5,7 +5,6 @@ const buttonLetContext = React.createContext()
 
 function ButtonLeftShowProvider({children}){
   const [dataLeft, setDataLeft] = React.useState('')
-  const [url, setUrl] = React.useState('')
   const [loadingLeft, setLoadingLeft] = React.useState('')
   const [escolaLeft, setEscolaLeft] = React.useState('')
   const [typeLeft, setType] = React.useState('')
@@ -51,7 +50,6 @@ function ButtonLeftShowProvider({children}){
     <buttonLetContext.Provider value={
       { 
         setType,
-        setUrl,
         setEscolaLeft,
         setDataLeft,
         handleGet,

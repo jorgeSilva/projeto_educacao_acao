@@ -13,7 +13,6 @@ import ModalDelete from '../../utils/modalDelete/ModalDelete'
 
 const Setor = () => {
   const {
-    dataLeft,
     date,
     valuePMI,
     valueSEE

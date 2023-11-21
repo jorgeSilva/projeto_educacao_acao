@@ -13,15 +13,11 @@ import ModalDelete from '../../utils/modalDelete/ModalDelete'
 const Servidores = () => {
   const {
     escola,
-    data,
-    selectedSchools, 
-    setSelectedSchools,
     type,
     loading
   } = React.useContext(buttonContext)
 
   const {
-    escolaLeft,
     typeLeft,
     dataLeft,
     loadingLeft

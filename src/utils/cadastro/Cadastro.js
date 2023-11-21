@@ -21,7 +21,7 @@ const Cadastro = ({content}) => {
       <div className={style.cadastro__home}>
         {
           content && content.map((item) => (
-            <>
+            <section key={item.type}>
               {
                 item.type === 'Setor' 
                 &&
@@ -134,7 +134,7 @@ const Cadastro = ({content}) => {
                 
                 </button>
               }
-            </>
+            </section>
           ))
         }
       </div>
