@@ -38,7 +38,10 @@ const ModalUpdate = ({content}) => {
     setSuccess,
     setError,
     selected,
-    schools
+    schools,
+    setInput0,
+    setInput1,
+    setInput2,
   } = React.useContext(cadContext)
 
   React.useEffect(() => {
@@ -100,13 +103,13 @@ const ModalUpdate = ({content}) => {
                           onChange={handleInput0}
                           required 
                           type='text' 
-                          value={input0} 
+                          value={input0 ? input0 : content.item.nome} 
                           placeholder={`${content.item.nome}`}/>
 
                         <input 
                           onChange={handleInput1}
                           type='text' 
-                          value={input1} 
+                          value={input1 ? input1 : content.item.modalidade} 
                           placeholder={`${content.item.modalidade}`}/>
 
                         <button onClick={handleEdit}>Editar</button>
@@ -147,19 +150,19 @@ const ModalUpdate = ({content}) => {
                           onChange={handleInput0} 
                           required 
                           type='text' 
-                          value={content.item.nome} 
+                          value={input0 ? input0 : content.item.nome} 
                           placeholder={`${content.item.nome}`}/>
 
                         <input 
                           onChange={handleInput1}
                           type='text' 
-                          value={input1} 
+                          value={input1 ? input1 : content.item.setor} 
                           placeholder={`${content.item.setor}`}/>
 
                         <input
                           onChange={handleInput2}
                           type='text' 
-                          value={input2} 
+                          value={input2 ? input2 : content.item.obs} 
                           placeholder={`${content.item.obs}`}/>
 
                         <button 
@@ -175,19 +178,19 @@ const ModalUpdate = ({content}) => {
                           onChange={handleInput0}
                           required 
                           type='text' 
-                          value={input0} 
+                          value={input0 ? input0 : content.item.nome} 
                           placeholder={`${content.item.nome}`}/>
 
                         <input 
                           onChange={handleInput1}
                           type='text' 
-                          value={input1} 
+                          value={input1 ? input1 : content.item.setor}
                           placeholder={`${content.item.setor}`}/>
 
                         <input
                           onChange={handleInput2}
                           type='text' 
-                          value={input2} 
+                          value={input2 ? input2 : content.item.obs} 
                           placeholder={`${content.item.obs}`}/>
 
                         <button onClick={handleEdit}>Editar</button>
@@ -368,13 +371,13 @@ const ModalUpdate = ({content}) => {
                           onChange={handleInput0} 
                           required 
                           type='text' 
-                          value={input0} 
+                          value={input0 ? input0 : content.item.nome} 
                           placeholder={`${content.item.nome}`}/>
 
                         <input 
                           onChange={handleInput1}
                           type='text' 
-                          value={input1} 
+                          value={input1 ? input1 : content.item.funcao} 
                           placeholder={`${content.item.funcao}`}/>
 
                         <select onChange={handleSelectSchool}>
@@ -469,19 +472,19 @@ const ModalUpdate = ({content}) => {
                           onChange={handleInput0} 
                           required 
                           type='text' 
-                          value={input0} 
+                          value={input0 ? input0 : content.item.nome} 
                           placeholder={`${content.item.nome}`}/>
 
                         <input 
                           onChange={handleInput1}
                           type='text' 
-                          value={input1} 
+                          value={input1 ? input1 : content.item.funcao} 
                           placeholder={`${content.item.funcao}`}/>
                         
                         <input 
                           onChange={handleInput2}
                           type='text' 
-                          value={input2} 
+                          value={input2 ? input2 : content.item.cargo} 
                           placeholder={`${content.item.cargo}`}/>
 
                         <select onChange={handleSelectSchool}>
