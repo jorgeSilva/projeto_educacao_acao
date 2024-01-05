@@ -59,8 +59,13 @@ const Servidores = () => {
                 select: 'servidor'
               },
               {
-                text: 'Aux. Limpeza contratada',
+                text: 'Aux. Limpeza Contratada',
                 url: 'auxLimpCont/show',
+                select: 'servidor'
+              },
+              {
+                text: 'Aux. Limpeza Efetivo',
+                url: 'auxLimpEfet/show',
                 select: 'servidor'
               },
               {

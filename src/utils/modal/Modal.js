@@ -38,6 +38,8 @@ const Modal = ({content}) => {
     selected,
     schools
   } = React.useContext(cadContext)
+
+  console.log(schools);
   
 
   React.useEffect(() => {
