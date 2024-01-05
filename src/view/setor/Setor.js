@@ -102,7 +102,7 @@ const Setor = () => {
               url: 'setor/cmaee/show'
             },
             {
-              text: 'Transporte Coletivo',
+              text: 'Transporte Escolar',
               url: 'setor/transporte/show'
             },
             {

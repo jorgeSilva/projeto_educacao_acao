@@ -19,6 +19,7 @@ function ButtonLeftShowProvider({children}){
       .then(({data}) => {
         setEscolaLeft(data)
         setLoadingLeft(false)
+        console.log(data);
       }).catch(e => {
         // console.log(e)
         setLoadingLeft(false)
