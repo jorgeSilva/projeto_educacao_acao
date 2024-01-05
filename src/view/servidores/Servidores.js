@@ -87,6 +87,16 @@ const Servidores = () => {
                 text: 'Monitor',
                 url: 'monitor/show',
                 select: 'servidor'
+              },
+              {
+                text: 'Escriturario',
+                url: 'escriturario/show',
+                select: 'servidor'
+              },
+              {
+                text: 'Vigia',
+                url: 'vigia/show',
+                select: 'servidor'
               }
             ]}/>
           </section>
@@ -557,6 +567,138 @@ const Servidores = () => {
               ||
               (
                 typeLeft === 'Monitor'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado monitor', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Escriturario'
+                &&
+                <>
+                  {
+                    dataLeft ?
+                    dataLeft.map((item) => (
+                      <section className='rigth__side__card' key={item._id}>
+                        {
+                          active && stop === item._id ?
+                          <>
+                            {
+                              active === 'update'?
+                              <ModalUpdate  content={{item, type:'servidores', setActive}}/>
+                              :
+                              <ModalDelete content={{item, type:'servidores', setActive, h1: 'Exclua o registro de determinado monitor', name: 'Servidor'}}/>
+                            }
+                          </>
+                          :
+                          <>
+                            {
+                              loadingLeft ?
+                              <span className="loader-"></span>
+                              :
+                              <>
+                                <div className='rigth__content__card__edit'>
+                                  <p className='card__text'>
+                                    <span>Nome:</span> {item.nome}
+                                  </p>
+                                  <div>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('update')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconEdit/>
+                                    </button>
+                                    <button className='card__button__edit' onClick={() => {
+                                      setActive('delete')
+                                      setStop(item._id)
+                                    }}>
+                                      <IconTrash/>
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <p className='card__text'>
+                                  <span>Função:</span> {item.funcao}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Cargo:</span> {item.cargo}
+                                </p>
+                                <p className='card__text'>
+                                  <span>Escola:</span> {item.fkescola.nome}
+                                </p>  
+                              </>
+                            } 
+                          </>
+                        }
+                      </section>
+                    )) 
+                    :
+                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                  } 
+                </>
+              )
+              ||
+              (
+                typeLeft === 'Vigia'
                 &&
                 <>
                   {
