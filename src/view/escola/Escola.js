@@ -68,27 +68,27 @@ const Escola = () => {
           <section className='left__side__content'>
             <ButtonsLeftOption content={[
               {
-                text: 'EMEI',
+                text: 'EMEI Arco-íris',
                 url: 'emei/show',
                 select: 'escola'
               },
               {
-                text: 'Vila Dom Silvio',
+                text: 'CEIM Vila Dom Silvio',
                 url: 'vila/show',
                 select: 'escola'
               },
               {
-                text: 'Agrovila III',
+                text: 'CEIM Agrovila III',
                 url: 'agro/show',
                 select: 'escola'
               },
               {
-                text: 'Toriba',
+                text: 'CEIM Turiba do Sul',
                 url: 'toriba/show',
                 select: 'escola'
               },
               {
-                text: 'Favo de mel',
+                text: 'CEIM Favo de Mel',
                 url: 'favo/show',
                 select: 'escola'
               },
