@@ -108,7 +108,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -130,7 +130,7 @@ const Servidores = () => {
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
-                                    <span>Nome:</span> {item.nome}
+                                    <span>Nome:</span> {item?.nome}
                                   </p>
                                   <div>
                                     <button className='card__button__edit' onClick={() => {
@@ -155,7 +155,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -164,7 +164,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -174,7 +174,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -221,7 +221,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -230,7 +230,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -240,7 +240,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -287,7 +287,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -296,7 +296,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -306,7 +306,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -353,7 +353,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -362,7 +362,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -372,7 +372,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -419,7 +419,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -428,7 +428,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -438,7 +438,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -485,7 +485,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -494,7 +494,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -504,7 +504,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -551,7 +551,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -560,7 +560,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -570,7 +570,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.legnth > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -617,7 +617,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -626,7 +626,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -636,7 +636,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -683,7 +683,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -692,7 +692,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -702,7 +702,7 @@ const Servidores = () => {
                 &&
                 <>
                   {
-                    dataLeft ?
+                    dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
                         {
@@ -749,7 +749,7 @@ const Servidores = () => {
                                   <span>Cargo:</span> {item.cargo}
                                 </p>
                                 <p className='card__text'>
-                                  <span>Escola:</span> {item.fkescola.nome}
+                                  <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                                 </p>  
                               </>
                             } 
@@ -758,7 +758,7 @@ const Servidores = () => {
                       </section>
                     )) 
                     :
-                    <p style={{textAlign:'center'}}>Selecione uma opção</p>
+                    <p style={{textAlign:'center'}}>Sem dados cadastrados</p>
                   } 
                 </>
               )
@@ -857,7 +857,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
@@ -916,7 +916,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
@@ -975,7 +975,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
@@ -1034,7 +1034,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
@@ -1093,7 +1093,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
@@ -1152,7 +1152,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
@@ -1211,7 +1211,7 @@ const Servidores = () => {
                               <span>Função:</span> {item.funcao}
                             </p>
                             <p className='card__text'>
-                              <span>Escola:</span> {item.fkescola.nome}
+                              <span>Escola:</span> {item.fkescola !== null ? item.fkescola.nome : "Não foi adicionado a uma escola"}
                             </p>  
                             </>
                           }
