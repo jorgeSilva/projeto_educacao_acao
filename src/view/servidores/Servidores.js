@@ -107,7 +107,10 @@ const Servidores = () => {
                 typeLeft === 'Merendeira Efetiva'
                 &&
                 <>
-                  {
+                  { 
+                    loadingLeft ?
+                      <span className="loader-"></span>
+                    :
                     dataLeft.length > 0 ?
                     dataLeft.map((item) => (
                       <section className='rigth__side__card' key={item._id}>
@@ -124,9 +127,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -190,9 +190,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -256,9 +253,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -322,9 +316,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -388,9 +379,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -454,9 +442,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -520,9 +505,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -586,9 +568,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -652,9 +631,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
@@ -718,9 +694,6 @@ const Servidores = () => {
                           :
                           <>
                             {
-                              loadingLeft ?
-                              <span className="loader-"></span>
-                              :
                               <>
                                 <div className='rigth__content__card__edit'>
                                   <p className='card__text'>
