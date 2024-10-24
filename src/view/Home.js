@@ -16,7 +16,6 @@ import { buttonContext } from '../context/buttonShowContext'
 
 const Home = () => {
   const [btnHeader, setBtnHeader] = React.useState('Setor')
-  const [active, setActive] = React.useState(false)
   const [modal, setModal] = React.useState(false)
   const token = window.localStorage.getItem('token')
 
@@ -30,18 +29,14 @@ const Home = () => {
   } = React.useContext(buttonContext)
 
   React.useEffect(() => {
-    if(!token){
-      window.location.href = '/'
+    if (!token) {
+      window.location.href = '/';
     }
-
-    if(btnHeader){
-      setUrlPadrao(btnHeader)
+  
+    if (btnHeader) {
+      setUrlPadrao(btnHeader);
     }
-
-    if(window.visualViewport.width <= 667){
-      setActive(true)
-    } 
-  }, [token, btnHeader])
+  }, [token, btnHeader, setUrlPadrao]);
     
   return (
     <main className={style.home__body}>
@@ -138,7 +133,6 @@ const Home = () => {
                   }
                 </section>
               </div>
-
               :
               <button onClick={() => setModal(!modal)} className={style.modal__button__open}>
                 <IconMenu/>

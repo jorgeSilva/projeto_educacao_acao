@@ -20,8 +20,9 @@ const Cadastro = ({content}) => {
       <h2 className={style.cadastro__title}>Cadastro</h2>
       <div className={style.cadastro__home}>
         {
-          content && content.map((item) => (
-            <section key={item.type}>
+          content && content.map((item, indice) => (
+            <section key={indice}>
+              {/* {console.log(item)} */}
               {
                 item.type === 'Setor' 
                 &&

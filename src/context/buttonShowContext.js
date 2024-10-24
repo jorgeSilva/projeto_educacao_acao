@@ -5,7 +5,6 @@ const buttonContext = React.createContext()
 
 function ButtonShowProvider({children}){
   const [data, setData] = React.useState('')
-  const [url, setUrl] = React.useState('')
   const [urlPadrao, setUrlPadrao] = React.useState('')
   const [loading, setLoading] = React.useState('')
   const [escola, setEscola] = React.useState('')
@@ -27,31 +26,30 @@ function ButtonShowProvider({children}){
     }
   }
 
-  async function handlePadrao(){
-    setLoading(true)
+  const handlePadrao = React.useCallback(async () => {
+    setLoading(true);
     await api.get(`/${urlPadrao.toLocaleLowerCase()}/show`)
-    .then(({data}) => {
-      setData('')
-      setEscola('')
-      setData(data)
-      if(data[0].fkescola){
-        setEscola(data);
-      }
-      setLoading(false)
-    }).catch(e => {
-      setLoading(false)
-    })
-  }
+      .then(({ data }) => {
+        setData('');
+        setEscola('');
+        setData(data);
+        if (data[0]?.fkescola) {
+          setEscola(data);
+        }
+        setLoading(false);
+      }).catch(e => {
+        setLoading(false);
+      });
+  }, [urlPadrao]);
 
   React.useEffect(() => {
-    handlePadrao()
-  }, [urlPadrao])
+    handlePadrao();
+  }, [handlePadrao]);
 
   return(
     <buttonContext.Provider value={
       { 
         setType,
-        setUrl,
         setUrlPadrao,
         handleGet,
         handlePadrao,

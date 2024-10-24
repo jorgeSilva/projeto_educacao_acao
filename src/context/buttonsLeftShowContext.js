@@ -29,7 +29,6 @@ function ButtonLeftShowProvider({children}){
         setDataLeft('')
         setDataLeft(data)
         setLoadingLeft(false)
-        console.log(data);
       }).catch(e => {
         // console.log(e)
         setLoadingLeft(false)

@@ -121,148 +121,16 @@ const Setor = () => {
             type === 'Merenda' ?
             <>
               {
-                data ? data.map((item) => (
-                  <>
-                    <section className='rigth__side__card' key={item._id}>
-                      {
-                        active && stop === item._id ?
-                        <>
-                          {
-                            active === 'update'?
-                            <ModalUpdate content={{item, type:'convenio', setActive}}/>
-                            :
-                            <ModalDelete content={{item, type:'convenio', setActive, h1: 'Exclua o registro do determinado convênio', name: 'merenda'}}/>
-                          }
-                        </>
-                        :
-                        <>
-                          {
-                            loading ?
-                            <span className="loader-"></span>
-                            :
-                            <>
-                              <div className='rigth__content__card__edit'>
-                                <p className='card__text'>
-                                  <span>Convênio:</span> {item.convenio}
-                                </p>
-                                <div>
-                                  <button className='card__button__edit' onClick={() => {
-                                    setActive('update')
-                                    setStop(item._id)
-                                  }}>
-                                    <IconEdit/>
-                                  </button>
-                                  <button className='card__button__edit' onClick={() => {
-                                    setActive('delete')
-                                    setStop(item._id)
-                                  }}>
-                                    <IconTrash/>
-                                  </button>
-                                </div>
-                              </div>
-                              <p className='card__text'>
-                                <span>PMI:</span> {item.pmi}
-                              </p>
-                              <p className='card__text'>
-                                <span>SEE:</span> {item.see}
-                              </p>
-                              <p className='card__text'>
-                                <span>Contrapartida:</span> {item.contraPartida}
-                              </p>
-                              <p className='card__text'>
-                                <span>Data:</span> {item.date}
-                              </p>
-                            </>
-                          }
-                        </>
-                      }
-                    </section>
-                  </>
-                )) 
-                :
-                <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
-              }
-            </>
-            :
-            type === 'Transporte' ?
-            <>
-              {
-                data ? data.map((item) => (
-                  <>
-                    <section className='rigth__side__card' key={item._id}>
-                      {
-                        active && stop === item._id ?
-                        <>
-                          {
-                            active === 'update'?
-                            <ModalUpdate content={{item, type:'convenio', setActive}}/>
-                            :
-                            <ModalDelete content={{item, type:'convenio', setActive, h1: 'Exclua o registro do determinado convênio', name: 'transporte'}}/>
-                          }
-                        </>
-                        :
-                        <>
-                          {
-                            loading ?
-                            <span className="loader-"></span>
-                            :
-                            <>
-                              <div className='rigth__content__card__edit'>
-                                <p className='card__text'>
-                                  <span>Convênio:</span> {item.convenio}
-                                </p>
-                                <div>
-                                  <button className='card__button__edit' onClick={() => {
-                                    setActive('update')
-                                    setStop(item._id)
-                                  }}>
-                                    <IconEdit/>
-                                  </button>
-                                  <button className='card__button__edit' onClick={() => {
-                                    setActive('delete')
-                                    setStop(item._id)
-                                  }}>
-                                    <IconTrash/>
-                                  </button>
-                                </div>
-                              </div>
-                              <p className='card__text'>
-                                <span>PMI:</span> {item.pmi}
-                              </p>
-                              <p className='card__text'>
-                                <span>SEE:</span> {item.see}
-                              </p>
-                              <p className='card__text'>
-                                <span>Contrapartida:</span> {item.contraPartida}
-                              </p>
-                              <p className='card__text'>
-                                <span>Data:</span> {item.date}
-                              </p>
-                            </>
-                          }
-                        </>
-                      }
-                    </section>
-                  </>
-                )) 
-                :
-                <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
-              }
-            </>
-            :
-            <>
-              {
-                data ? data.map((item) => (
-                  <>
-                    <section className='rigth__side__card' key={item._id}>
-                      {
-                        active && stop === item._id ? 
-                        <>
+                data ? data.map((item, indice) => (
+                  <section className='rigth__side__card' key={indice+item._id}>
+                    {
+                      active && stop === item._id ?
+                      <>
                         {
                           active === 'update'?
-                          <ModalUpdate content={{item, type:'setor', setActive}}/>
+                          <ModalUpdate content={{item, type:'convenio', setActive}}/>
                           :
-                          <ModalDelete content={{item, type:'setor', setActive, h1: 'Exclua o registro do determinado funcionário', name: 'Funcionário'}}/>
+                          <ModalDelete content={{item, type:'convenio', setActive, h1: 'Exclua o registro do determinado convênio', name: 'merenda'}}/>
                         }
                       </>
                       :
@@ -274,7 +142,7 @@ const Setor = () => {
                           <>
                             <div className='rigth__content__card__edit'>
                               <p className='card__text'>
-                                <span>Nome:</span> {item.nome}
+                                <span>Convênio:</span> {item.convenio}
                               </p>
                               <div>
                                 <button className='card__button__edit' onClick={() => {
@@ -292,17 +160,143 @@ const Setor = () => {
                               </div>
                             </div>
                             <p className='card__text'>
-                              <span>Setor:</span> {item.setor}
+                              <span>PMI:</span> {item.pmi}
                             </p>
                             <p className='card__text'>
-                              <span>Obs:</span> {item.obs}
+                              <span>SEE:</span> {item.see}
+                            </p>
+                            <p className='card__text'>
+                              <span>Contrapartida:</span> {item.contraPartida}
+                            </p>
+                            <p className='card__text'>
+                              <span>Data:</span> {item.date}
                             </p>
                           </>
                         }
                       </>
                     }
-                    </section>
-                  </>
+                  </section>
+                )) 
+                :
+                <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
+              }
+            </>
+            :
+            type === 'Transporte' ?
+            <>
+              {
+                data ? data.map((item, indice) => (
+                  <section className='rigth__side__card' key={indice+item._id}>
+                    {
+                      active && stop === item._id ?
+                      <>
+                        {
+                          active === 'update'?
+                          <ModalUpdate content={{item, type:'convenio', setActive}}/>
+                          :
+                          <ModalDelete content={{item, type:'convenio', setActive, h1: 'Exclua o registro do determinado convênio', name: 'transporte'}}/>
+                        }
+                      </>
+                      :
+                      <>
+                        {
+                          loading ?
+                          <span className="loader-"></span>
+                          :
+                          <>
+                            <div className='rigth__content__card__edit'>
+                              <p className='card__text'>
+                                <span>Convênio:</span> {item.convenio}
+                              </p>
+                              <div>
+                                <button className='card__button__edit' onClick={() => {
+                                  setActive('update')
+                                  setStop(item._id)
+                                }}>
+                                  <IconEdit/>
+                                </button>
+                                <button className='card__button__edit' onClick={() => {
+                                  setActive('delete')
+                                  setStop(item._id)
+                                }}>
+                                  <IconTrash/>
+                                </button>
+                              </div>
+                            </div>
+                            <p className='card__text'>
+                              <span>PMI:</span> {item.pmi}
+                            </p>
+                            <p className='card__text'>
+                              <span>SEE:</span> {item.see}
+                            </p>
+                            <p className='card__text'>
+                              <span>Contrapartida:</span> {item.contraPartida}
+                            </p>
+                            <p className='card__text'>
+                              <span>Data:</span> {item.date}
+                            </p>
+                          </>
+                        }
+                      </>
+                    }
+                  </section>
+                )) 
+                :
+                <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
+              }
+            </>
+            :
+            <>
+              {
+                data ? data.map((item, indice) => (
+                  <section className='rigth__side__card' key={indice+item._id}>
+                    {
+                      active && stop === item._id ? 
+                      <>
+                      {
+                        active === 'update'?
+                        <ModalUpdate content={{item, type:'setor', setActive}}/>
+                        :
+                        <ModalDelete content={{item, type:'setor', setActive, h1: 'Exclua o registro do determinado funcionário', name: 'Funcionário'}}/>
+                      }
+                    </>
+                    :
+                    <>
+                      {
+                        loading ?
+                        <span className="loader-"></span>
+                        :
+                        <>
+                          <div className='rigth__content__card__edit'>
+                            <p className='card__text'>
+                              <span>Nome:</span> {item.nome}
+                            </p>
+                            <div>
+                              <button className='card__button__edit' onClick={() => {
+                                setActive('update')
+                                setStop(item._id)
+                              }}>
+                                <IconEdit/>
+                              </button>
+                              <button className='card__button__edit' onClick={() => {
+                                setActive('delete')
+                                setStop(item._id)
+                              }}>
+                                <IconTrash/>
+                              </button>
+                            </div>
+                          </div>
+                          <p className='card__text'>
+                            <span>Setor:</span> {item.setor}
+                          </p>
+                          <p className='card__text'>
+                            <span>Obs:</span> {item.obs}
+                          </p>
+                        </>
+                      }
+                    </>
+                  }
+                  </section>
                 )) 
                 :
                 <p className='rigth__side__text__report'>Ainda não tem cadastros</p>
